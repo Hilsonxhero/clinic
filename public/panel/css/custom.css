@@ -1,0 +1,80 @@
+@font-face {
+    font-family: YekanBakh;
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url(../fonts/YekanBakh/YekanBakh-Regular.woff2) format("woff2"), url(../fonts/YekanBakh/YekanBakh-Regular.ttf) format("truetype")
+}
+
+@font-face {
+    font-family: YekanBakh;
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(../fonts/YekanBakh/YekanBakh-Medium.woff2) format("woff2"), url(../fonts/YekanBakh/YekanBakh-Medium.ttf) format("truetype")
+}
+
+body,
+html {
+    font-family: YekanBakh, sans-serif;
+}
+
+
+.ck.ck-toolbar {
+    background: transparent !important;
+    border: 1px solid #E4E6EF !important;
+}
+
+.ck.ck-editor__main>.ck-editor__editable:not(.ck-focused) {
+    border-color: #E4E6EF !important;
+}
+
+.ck-focused {
+    border: 1px solid #E4E6EF !important;
+    border-color: #E4E6EF !important;
+}
+
+.ck-content.ck-focused {
+    border: 1px solid #E4E6EF !important;
+    border-color: #E4E6EF !important;
+    box-shadow: none !important;
+}
+
+.editor-ui {
+    display: none;
+}
+
+
+.tooltip-main {
+    font-family: YekanBakh, sans-serif;
+}
+
+.tooltip-qm {
+    font-family: YekanBakh, sans-serif;
+}
+
+.tooltip-inner {
+    font-family: YekanBakh, sans-serif;
+}
+
+.popover {
+    font-family: YekanBakh, sans-serif;
+}
+
+
+.select2-container--bootstrap5 .select2-dropdown .select2-results__option.select2-results__option--selected {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 11'%3e%3cpath fill='%23FFFFFF' d='M4.89557 6.49823L2.79487 4.26513C2.26967 3.70683 1.38251 3.70683 0.857309 4.26513C0.375593 4.77721 0.375593 5.57574 0.857309 6.08781L4.74989 10.2257C5.14476 10.6455 5.81176 10.6455 6.20663 10.2257L13.1427 2.85252C13.6244 2.34044 13.6244 1.54191 13.1427 1.02984C12.6175 0.471537 11.7303 0.471536 11.2051 1.02984L6.06096 6.49823C5.74506 6.83403 5.21146 6.83403 4.89557 6.49823Z'/%3e%3c/svg%3e");
+    background-size: 0.8rem;
+    background-position: center left 1.25rem;
+    background-color: #009ef7;
+    color: #fff;
+    transition: color .2s ease, background-color .2s ease;
+}
+
+.max-w-100px{
+    max-width: 100px;
+
+}
