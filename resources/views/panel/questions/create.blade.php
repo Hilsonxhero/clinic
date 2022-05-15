@@ -3,51 +3,16 @@
 
 @section('breadcrumb')
     <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">
-        ایجاد سرویس
+        ایجاد سوال
         <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
     </h1>
 @endsection
 
 @section('content')
-    <form id="kt_ecommerce_add_category_form" action="{{ route('panel.services.store') }}" method="post"
+    <form id="kt_ecommerce_add_category_form" action="{{ route('panel.questions.store') }}" method="post"
         class="form d-flex flex-column flex-lg-row" enctype="multipart/form-data">
         @csrf
-        <div class="d-flex flex-column gap-7 gap-lg-10 w-100 w-lg-300px mb-7 me-lg-10">
-            <div class="card card-flush py-4">
-                <div class="card-header">
-                    <div class="card-title">
-                        <h2>تصویر</h2>
-                    </div>
-                </div>
-                <div class="card-body text-center pt-0">
-                    <x-file-upload name="icon"></x-file-upload>
-                    <div class="text-muted fs-7">
-                        تصویر سرویس را تنظیم کنید. فقط فایل های تصویری *.png، *.jpg و *.jpeg پذیرفته می شوند
-                    </div>
-                </div>
-            </div>
-            <div class="card card-flush py-4">
-                <div class="card-header">
-                    <div class="card-title">
-                        <h2>وضعیت</h2>
-                    </div>
-                    <div class="card-toolbar">
-                        <div class="rounded-circle bg-success w-15px h-15px" id="kt_ecommerce_add_category_status"></div>
-                    </div>
-                </div>
-                <div class="card-body pt-0">
 
-                    <x-select name="status" placeholder="وضعیت">
-                        @foreach (\App\Models\Service::$statuses as $status)
-                            <option value="{{ $status }}">@lang($status)</option>
-                        @endforeach
-                    </x-select>
-
-                </div>
-
-            </div>
-
-        </div>
 
         <div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-10">
             <div class="card card-flush py-4">
@@ -58,13 +23,8 @@
                 </div>
                 <div class="card-body pt-0">
                     <div class="mb-10 fv-row row">
-
-                        <x-input-group class="col-md-6" label="عنوان ">
-                            <x-input name="title" placeholder="عنوان "></x-input>
-                        </x-input-group>
-
-                        <x-input-group class="col-md-6" label="انتخاب  دسته بندی">
-                            <x-select name="category_id" placeholder="انتخاب  دسته بندی">
+                        <x-input-group class="col-md-12" label="انتخاب   دسته بندی">
+                            <x-select name="category_id" placeholder="انتخاب   دسته بندی">
                                 <option value="">ندارد</option>
                                 @foreach ($categories as $category)
                                     <option value="{{ $category->id }}">{{ $category->title }}</option>
@@ -72,7 +32,9 @@
                             </x-select>
                         </x-input-group>
 
-
+                        <x-input-group class="col-md-12" label="عنوان سوال ">
+                            <x-input name="question"></x-input>
+                        </x-input-group>
 
 
 
@@ -80,8 +42,8 @@
 
 
                     <div>
-                        <x-input-group label="توضیحات ">
-                            <x-text-editor name="description">
+                        <x-input-group label="پاسخ ">
+                            <x-text-editor name="answer">
                             </x-text-editor>
                         </x-input-group>
                     </div>
@@ -93,11 +55,11 @@
 
             <div class="d-flex justify-content-end">
                 <!--begin::Button-->
-                <a href="{{ route('panel.services.index') }}" id="kt_ecommerce_add_product_cancel"
+                <a href="{{ route('panel.questions.index') }}" id="kt_ecommerce_add_product_cancel"
                     class="btn btn-light me-5">لغو</a>
                 <!--end::Button-->
                 <!--begin::Button-->
-                <button type="submit" id="kt_ecommerce_add_category_submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary">
                     <span class="indicator-label">ذخیره تغییرات</span>
                     <span class="indicator-progress">Please wait...
                         <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
@@ -130,18 +92,7 @@
         "use strict";
         var KTAppEcommerceSaveCategory = (function() {
             const e = () => {
-                    $("#kt_ecommerce_add_category_conditions").repeater({
-                        initEmpty: !1,
-                        defaultValues: {
-                            "text-input": "foo"
-                        },
-                        show: function() {
-                            $(this).slideDown(), t();
-                        },
-                        hide: function(e) {
-                            $(this).slideUp(e);
-                        },
-                    });
+
                 },
                 t = () => {
                     document

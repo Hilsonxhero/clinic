@@ -14712,7 +14712,7 @@ html:not([dir="rtl"]) .range-slider-ui.noUi-horizontal .noUi-handle {
 }
 
 .dropdown-toggle::after {
-    margin-right: -0.25rem;
+    margin-right: 0.3rem;
     content: "";
 }
 

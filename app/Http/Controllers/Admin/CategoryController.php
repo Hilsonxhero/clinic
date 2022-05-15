@@ -130,7 +130,6 @@ class CategoryController extends Controller
             $request->merge(['media_id' => MediaFileService::publicUpload($request->file('thumb'))->id]);
             if ($category->media) $category->media()->delete();
         } else {
-
             $request->merge(['media_id' => $category->media_id]);
         }
 

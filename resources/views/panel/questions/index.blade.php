@@ -19,8 +19,8 @@
                         </svg>
                     </span>
                     <!--end::Svg Icon-->
-                    <input type="text" data-kt-ecommerce-service-filter="search"
-                        class="form-control form-control-solid w-250px ps-14" placeholder="جستجو سرویس" />
+                    <input type="text" data-kt-ecommerce-question-filter="search"
+                        class="form-control form-control-solid w-250px ps-14" placeholder="جستجو سوال" />
                 </div>
                 <!--end::Search-->
             </div>
@@ -28,7 +28,7 @@
             <!--begin::Card toolbar-->
             <div class="card-toolbar">
                 <!--begin::Add customer-->
-                <a href="{{ route('panel.services.create') }}" class="btn btn-primary">سرویس جدید</a>
+                <a href="{{ route('panel.questions.create') }}" class="btn btn-primary">سوال جدید</a>
                 <!--end::Add customer-->
             </div>
             <!--end::Card toolbar-->
@@ -37,7 +37,7 @@
         <!--begin::Card body-->
         <div class="card-body pt-0">
             <!--begin::Table-->
-            <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_service_table">
+            <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_question_table">
                 <!--begin::Table head-->
                 <thead>
                     <!--begin::Table row-->
@@ -45,12 +45,11 @@
                         <th class="w-10px pe-2">
                             <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
                                 <input class="form-check-input" type="checkbox" data-kt-check="true"
-                                    data-kt-check-target="#kt_ecommerce_service_table .form-check-input" value="1" />
+                                    data-kt-check-target="#kt_ecommerce_question_table .form-check-input" value="1" />
                             </div>
                         </th>
-                        <th class="">عنوان </th>
-                        <th class="">دسته بندی</th>
-                        <th class=""> وضعیت </th>
+                        <th class="">عنوان سوال </th>
+                        <th class="">دسته بندی </th>
                         <th class="max-w-100px">عملیات</th>
                     </tr>
                     <!--end::Table row-->
@@ -58,7 +57,7 @@
                 <!--end::Table head-->
                 <!--begin::Table body-->
                 <tbody class="fw-bold text-gray-600">
-                    @foreach ($services as $service)
+                    @foreach ($questions as $question)
                         <tr>
                             <!--begin::Checkbox-->
                             <td>
@@ -66,50 +65,20 @@
                                     <input class="form-check-input" type="checkbox" value="1" />
                                 </div>
                             </td>
-                            <!--end::Checkbox-->
-                            <!--begin::service=-->
+
                             <td>
-                                <div class="d-flex">
-                                    <a href="" class="symbol symbol-50px">
-                                        <span class="symbol-label"
-                                            style="background-image:url({{ $service->icon }});"></span>
-                                    </a>
-                                    <div class="ms-5">
-                                        <a class="text-gray-800 text-hover-primary fs-5 fw-bolder mb-1"
-                                            data-kt-ecommerce-service-filter="service_name">
-
-                                            {{ $service->title }}
-
-                                        </a>
-                                        <div class="text-muted fs-7 fw-bolder">
-                                            {!! truncate($service->description, 90) !!}
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="badge badge-light-primary">{{ $service->category ? $service->category->title : 'ندارد' }}</div>
-                            </td>
-                            <td>
-                                @switch($service->status)
-                                    @case(\App\Models\Service::ACTIVE_STATUS)
-                                        <div class="badge badge-light-success">@lang($service->status)</div>
-                                    @break
-
-                                    @case(\App\Models\Service::INACTIVE_STATUS)
-                                        <div class="badge badge-light-danger">@lang($service->status)</div>
-                                    @break
-
-                                    @default
-                                @endswitch
+                                {{ $question->question }}
                             </td>
 
+                            <td data-kt-ecommerce-question-filter="question_name">
+                                {{ $question->category->title }}
+                            </td>
 
 
                             <td>
                                 <div class="d-flex justify-content-end flex-shrink-0">
 
-                                    <a href="{{ route('panel.services.edit', $service->id) }}"
+                                    <a href="{{ route('panel.questions.edit', $question->id) }}"
                                         class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                         <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                         <span class="svg-icon svg-icon-3">
@@ -133,8 +102,8 @@
                                     </form>
 
 
-                                    <a data-id="{{ json_encode($service->id) }}"
-                                        data-kt-ecommerce-service-filter="delete_row" href="#"
+                                    <a data-id="{{ json_encode($question->id) }}"
+                                        data-kt-ecommerce-question-filter="delete_row" href="#"
                                         class="btn btn-icon btn-bg-light btn-active-color-danger btn-sm">
                                         <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                         <span class="svg-icon svg-icon-3">
@@ -176,12 +145,12 @@
 
     <script>
         "use strict";
-        var KTAppEcommerceservices = (function() {
+        var KTAppEcommercequestions = (function() {
             var t,
                 e,
                 n = () => {
                     t.querySelectorAll(
-                        '[data-kt-ecommerce-service-filter="delete_row"]'
+                        '[data-kt-ecommerce-question-filter="delete_row"]'
                     ).forEach((t) => {
                         t.addEventListener("click", function(t) {
 
@@ -192,10 +161,10 @@
                             t.preventDefault();
                             const n = t.target.closest("tr"),
                                 o = n.querySelector(
-                                    '[data-kt-ecommerce-service-filter="service_name"]'
+                                    '[data-kt-ecommerce-question-filter="question_name"]'
                                 ).innerText;
                             Swal.fire({
-                                text: "آیا از حذف سرویس " + o +
+                                text: "آیا از حذف سوال سرویس " + o +
                                     " اطمینان دارید ؟ ",
                                 icon: "warning",
                                 showCancelButton: !0,
@@ -211,7 +180,7 @@
                                     t.dismiss
                                 } else {
                                     $("#js-delete-form").attr('action',
-                                        `/panel/admin/services/${id}`)
+                                        `/panel/admin/questions/${id}`)
                                     $("#js-delete-form").submit()
                                 }
                             });
@@ -220,7 +189,7 @@
                 };
             return {
                 init: function() {
-                    (t = document.querySelector("#kt_ecommerce_service_table")) &&
+                    (t = document.querySelector("#kt_ecommerce_question_table")) &&
                     ((e = $(t).DataTable({
                             info: !1,
                             order: [],
@@ -242,7 +211,7 @@
                             n();
                         }),
                         document
-                        .querySelector('[data-kt-ecommerce-service-filter="search"]')
+                        .querySelector('[data-kt-ecommerce-question-filter="search"]')
                         .addEventListener("keyup", function(t) {
                             e.search(t.target.value).draw();
                         }),
@@ -251,7 +220,7 @@
             };
         })();
         KTUtil.onDOMContentLoaded(function() {
-            KTAppEcommerceservices.init();
+            KTAppEcommercequestions.init();
         });
     </script>
 @endsection

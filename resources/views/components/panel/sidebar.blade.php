@@ -248,8 +248,7 @@
                     </div>
 
                     <div class="menu-item">
-                        <a class="menu-link"
-                            href="https://preview.keenthemes.com/metronic8/demo1/layout-builder.html">
+                        <a class="menu-link" href="{{ route('panel.pricings.index') }}">
                             <span class="menu-icon">
                                 <!--begin::Svg Icon | path: icons/duotune/general/gen019.svg-->
                                 <span class="svg-icon svg-icon-2">
@@ -370,24 +369,25 @@
                         </span>
                         <div class="menu-sub menu-sub-accordion menu-active-bg">
 
-
                             <div class="menu-item">
-                                <a class="menu-link" href="../../demo1/dist/pages/about.html">
+                                <a class="menu-link" href="{{ route('panel.page.landing.index') }}">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
-                                    <span class="menu-title">سوالات متداول</span>
+                                    <span class="menu-title">صفحه اصلی</span>
                                 </a>
                             </div>
 
                             <div class="menu-item">
-                                <a class="menu-link" href="../../demo1/dist/pages/about.html">
+                                <a class="menu-link" href="{{ route('panel.page.about.index') }}">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
                                     <span class="menu-title">درباره ما</span>
                                 </a>
                             </div>
+
+
                             <div class="menu-item">
                                 <a class="menu-link" href="../../demo1/dist/pages/contact.html">
                                     <span class="menu-bullet">
@@ -404,22 +404,7 @@
                                     <span class="menu-title">تیم کادر درمان</span>
                                 </a>
                             </div>
-                            <div class="menu-item">
-                                <a class="menu-link" href="../../demo1/dist/pages/licenses.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Licenses</span>
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link" href="../../demo1/dist/pages/sitemap.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Sitemap</span>
-                                </a>
-                            </div>
+
                         </div>
                     </div>
 
@@ -433,7 +418,7 @@
 
                     <div class="menu-item">
                         <a class="menu-link"
-                            href="https://preview.keenthemes.com/metronic8/demo1/layout-builder.html">
+                            href="{{ route('panel.questions.index') }}">
                             <span class="menu-icon">
                                 <!--begin::Svg Icon | path: icons/duotune/general/gen019.svg-->
                                 <span class="svg-icon svg-icon-2">

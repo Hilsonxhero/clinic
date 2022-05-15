@@ -1,11 +1,11 @@
 <div>
-    <footer class="footer bg-secondary pt-5 pb-4 pb-lg-5">
+    <footer class="footer dark-mode bg-dark border-top border-light pt-5 pb-4 pb-lg-5">
         <div class="container pt-lg-4">
             <div class="row pb-5">
                 <div class="col-lg-4 col-md-6">
                     <div class="navbar-brand text-dark p-0 me-0 mb-3 mb-lg-4">
-                        <img src="assets/img/logo.svg" width="47" alt="Silicon">
-                        Silicon
+                        <img src="{{asset('assets/img/logo.svg')}}" width="140" alt="">
+                   
                     </div>
                     <p class="fs-sm pb-lg-3 mb-4">Proin ipsum pharetra, senectus eget scelerisque varius pretium platea
                         velit.

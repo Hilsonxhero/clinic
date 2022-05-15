@@ -15,12 +15,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon and Touch Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/favicon/apple-touch-icon.png')}}">
+    {{-- <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/favicon/apple-touch-icon.png')}}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/favicon/favicon-32x32.png')}}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/favicon/favicon-16x16.png')}}">
-    <link rel="manifest" href="{{asset('assets/favicon/site.webmanifest')}}">
-    <link rel="mask-icon" href="{{asset('assets/favicon/safari-pinned-tab.svg')}}" color="#6366f1">
-    <link rel="shortcut icon" href="{{asset('assets/favicon/favicon.ico')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/favicon/favicon-16x16.png')}}"> --}}
+    {{-- <link rel="manifest" href="{{asset('assets/favicon/site.webmanifest')}}"> --}}
+    {{-- <link rel="mask-icon" href="{{asset('assets/favicon/safari-pinned-tab.svg')}}" color="#6366f1"> --}}
+    {{-- <link rel="shortcut icon" href="{{asset('assets/favicon/favicon.ico')}}"> --}}
     <meta name="msapplication-TileColor" content="#080032">
     <meta name="msapplication-config" content="{{asset('assets/favicon/browserconfig.xml')}}">
     <meta name="theme-color" content="#ffffff">
@@ -201,14 +201,14 @@
     <!-- Vendor Scripts -->
 
     <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/smooth-scroll/smooth-scroll.polyfills.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/rellax/rellax.min.js')}}"></script>
+    {{-- <script src="{{asset('assets/vendor/smooth-scroll/smooth-scroll.polyfills.min.js')}}"></script> --}}
+    {{-- <script src="{{asset('assets/vendor/rellax/rellax.min.js')}}"></script> --}}
     <script src="{{asset('assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/lightgallery/lightgallery.min.js')}}"></script>
+    {{-- <script src="{{asset('assets/vendor/lightgallery/lightgallery.min.js')}}"></script>
     <script src="{{asset('assets/vendor/lightgallery/plugins/fullscreen/lg-fullscreen.min.js')}}"></script>
     <script src="{{asset('assets/vendor/lightgallery/plugins/zoom/lg-zoom.min.js')}}"></script>
     <script src="{{asset('assets/vendor/lightgallery/plugins/video/lg-video.min.js')}}"></script>
-
+ --}}
 
     <!-- Main Theme Script -->
     <script src="{{asset('assets/js/theme.min.js')}}"></script>

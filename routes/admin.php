@@ -32,5 +32,20 @@ Route::prefix('panel/admin')->name('panel.')->group(function () {
     Route::resource('services', App\Http\Controllers\Admin\ServiceController::class);
 
     // pricing
-    Route::resource('pricing', App\Http\Controllers\Admin\PricingController::class);
+    Route::resource('pricings', App\Http\Controllers\Admin\PricingController::class);
+
+    // questions
+    Route::resource('questions', App\Http\Controllers\Admin\QuestionController::class);
+
+    // page about
+    Route::get('page/about', [App\Http\Controllers\Admin\PageController::class, 'about'])
+        ->name('page.about.index');;
+    Route::post('page/about', [App\Http\Controllers\Admin\PageController::class, 'aboutStore'])
+        ->name('page.about.store');;
+
+    // page landing
+    Route::get('page/landing', [App\Http\Controllers\Admin\PageController::class, 'landing'])
+        ->name('page.landing.index');
+    Route::post('page/landing', [App\Http\Controllers\Admin\PageController::class, 'landingStore'])
+        ->name('page.landing.store');
 });

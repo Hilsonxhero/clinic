@@ -2,84 +2,84 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Page;
 use Illuminate\Http\Request;
+use App\Services\MediaFileService;
+use App\Http\Controllers\Controller;
 
 class PageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function landing(Request $request)
     {
-        //
+    }
+    public function services(Request $request)
+    {
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function about()
     {
-        //
+        $data = (object) Page::query()->where('name', 'about')->firstOrCreate(
+            ['name' => 'about'],
+            ['value' =>  ['title' => 'درباره ما', 'body' => 'متن درباره ما', 'pic1' => '', 'pic2' => '', 'pic3' => '', 'pic4' => '',]]
+        )->value;
+
+
+        return view('panel.pages.about', compact('data'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function aboutStore(Request $request)
     {
-        //
+        $request->validate([
+            'title' => ['required'],
+            'body' => ['required'],
+        ]);
+
+        $about_data =  Page::query()->where('name', 'about')->first()->value;
+
+        foreach ($request->files as $key => $value) {
+            if ($request->file($key)) {
+                $request->merge([$key . '_path' => MediaFileService::publicUpload($request->file($key))->files['original']]);
+            }
+        }
+
+        if (!$request->file('pic1')) {
+            $request->merge(['pic1_path' => $about_data['pic1']]);
+        }
+        if (!$request->file('pic2')) {
+            $request->merge(['pic2_path' => $about_data['pic2']]);
+        }
+        if (!$request->file('pic3')) {
+            $request->merge(['pic3_path' => $about_data['pic3']]);
+        }
+        if (!$request->file('pic4')) {
+            $request->merge(['pic4_path' => $about_data['pic4']]);
+        }
+
+        $data = [
+            'title' => $request->title,
+            'body' => $request->body,
+            'pic1' => $request->pic1_path,
+            'pic2' => $request->pic2_path,
+            'pic3' => $request->pic3_path,
+            'pic4' => $request->pic4_path,
+        ];
+
+        Page::query()->updateOrCreate(
+            ['name' => 'about'],
+            ['value' =>  $data]
+        );
+
+        return redirect()->back()->with('success', '  ذخیره تغییرات با موفقیت انجام شد');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+
+
+    public function contact(Request $request)
     {
-        //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function members(Request $request)
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }
