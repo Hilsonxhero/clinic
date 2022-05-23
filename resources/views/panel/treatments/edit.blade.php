@@ -79,30 +79,36 @@
 
                     </div>
 
-                    <div>
+
+
+
+                    <div class="row">
+
                         <x-input-group label="متن ">
                             <x-text-editor name="body" value="{{ $treatment->body }}">
                             </x-text-editor>
                         </x-input-group>
-                    </div>
 
-                    <div>
-                        <x-input-group label="توضیحات ">
+                        <div class="col-12">
+                            <x-input-group label="توضیحات ">
 
-                            <x-text-area name="description" value="{{ $treatment->description }}"></x-text-area>
+                                <x-text-area name="description" value="{{ $treatment->description }}"></x-text-area>
+                            </x-input-group>
+                        </div>
+
+                        <x-input-group class="" label="کلمات کلیدی ">
+                            <x-tag-input class="js-keywords" name="tags" placeholder="کلمات کلیدی"
+                                value="{{ $treatment->tags_data }}"></x-tag-input>
                         </x-input-group>
+
+                        <div class="text-muted fs-7">
+                            فهرستی از کلمات کلیدی را تنظیم کنید که دسته به آنها مربوط می شود. کلمات کلیدی را با اضافه کردن
+                            کاما یا <code>Enter</code> از هم جدا کنید
+                            <code>,</code> بین هر کلمه کلیدی.
+                        </div>
+
                     </div>
 
-                    <x-input-group class="" label="کلمات کلیدی ">
-                        <x-tag-input class="js-keywords" name="tags" placeholder="کلمات کلیدی"
-                            value="{{ $treatment->tags_data }}"></x-tag-input>
-                    </x-input-group>
-
-                    <div class="text-muted fs-7">
-                        فهرستی از کلمات کلیدی را تنظیم کنید که دسته به آنها مربوط می شود. کلمات کلیدی را با اضافه کردن
-                        کاما یا <code>Enter</code> از هم جدا کنید
-                        <code>,</code> بین هر کلمه کلیدی.
-                    </div>
 
                 </div>
 

@@ -25,7 +25,7 @@
                     <!--end::Col-->
                     <!--begin::Col-->
                     <div class="col-lg-8">
-                        <x-file-upload name="logo" ></x-file-upload>
+                        <x-file-upload name="logo" value="{{ '/storage/' . $settings->logo }}"></x-file-upload>
                         <!--begin::Hint-->
                         <div class="form-text">فرمت های فایل : png, jpg, jpeg.</div>
                         <!--end::Hint-->
@@ -42,7 +42,8 @@
                     <!--end::Col-->
                     <!--begin::Col-->
                     <div class="col-xl-9 fv-row">
-                        <input type="text" class="form-control form-control-solid" name="project_name" value="" />
+                        <input type="text" class="form-control form-control-solid" name="project_name"
+                            value="{{ $settings->project_name }}" />
                     </div>
                 </div>
 
@@ -54,7 +55,8 @@
                     <!--end::Col-->
                     <!--begin::Col-->
                     <div class="col-xl-9 fv-row">
-                        <input type="text" class="form-control form-control-solid" name="copyright" value="" />
+                        <input type="text" class="form-control form-control-solid" name="copyright"
+                            value="{{ $settings->copyright }}" />
                     </div>
                 </div>
 
@@ -66,7 +68,8 @@
                     <!--end::Col-->
                     <!--begin::Col-->
                     <div class="col-xl-9 fv-row">
-                        <input type="text" class="form-control form-control-solid" name="social_media[instagram]" value="" />
+                        <input type="text" class="form-control form-control-solid" name="social_media[instagram]"
+                            value="{{ $settings->social_media['instagram'] }}" />
                     </div>
                 </div>
 
@@ -79,7 +82,8 @@
                     <!--end::Col-->
                     <!--begin::Col-->
                     <div class="col-xl-9 fv-row">
-                        <input type="text" class="form-control form-control-solid" name="social_media[whatsapp]" value="" />
+                        <input type="text" class="form-control form-control-solid" name="social_media[whatsapp]"
+                            value="{{ $settings->social_media['whatsapp'] }}" />
                     </div>
                 </div>
 
@@ -91,7 +95,8 @@
                     <!--end::Col-->
                     <!--begin::Col-->
                     <div class="col-xl-9 fv-row">
-                        <input type="text" class="form-control form-control-solid" name="email" value="" />
+                        <input type="text" class="form-control form-control-solid" name="email"
+                            value="{{ $settings->email }}" />
                     </div>
                 </div>
 
@@ -103,7 +108,8 @@
                     <!--end::Col-->
                     <!--begin::Col-->
                     <div class="col-xl-9 fv-row">
-                        <input type="text" class="form-control form-control-solid" name="mobile_1" value="" />
+                        <input type="text" class="form-control form-control-solid" name="mobile_1"
+                            value="{{ $settings->mobile_1 }}" />
                     </div>
                 </div>
 
@@ -115,7 +121,8 @@
                     <!--end::Col-->
                     <!--begin::Col-->
                     <div class="col-xl-9 fv-row">
-                        <input type="text" class="form-control form-control-solid" name="mobile_2" value="" />
+                        <input type="text" class="form-control form-control-solid" name="mobile_2"
+                            value="{{ $settings->mobile_2 }}" />
                     </div>
                 </div>
 
@@ -127,7 +134,8 @@
                     <!--end::Col-->
                     <!--begin::Col-->
                     <div class="col-xl-9 fv-row">
-                        <input type="text" class="form-control form-control-solid" name="phone_1" value="" />
+                        <input type="text" class="form-control form-control-solid" name="phone_1"
+                            value="{{ $settings->phone_1 }}" />
                     </div>
                 </div>
 
@@ -139,7 +147,8 @@
                     <!--end::Col-->
                     <!--begin::Col-->
                     <div class="col-xl-9 fv-row">
-                        <input type="text" class="form-control form-control-solid" name="phone_2" value="" />
+                        <input type="text" class="form-control form-control-solid" name="phone_2"
+                            value="{{ $settings->phone_2 }}" />
                     </div>
                 </div>
 
@@ -151,7 +160,8 @@
                     <!--end::Col-->
                     <!--begin::Col-->
                     <div class="col-xl-9 fv-row">
-                        <input type="text" class="form-control form-control-solid" name="map" value="" />
+                        <input type="text" class="form-control form-control-solid" name="map"
+                            value="{{ $settings->map }}" />
                     </div>
                 </div>
 
@@ -165,7 +175,8 @@
                     <!--end::Col-->
                     <!--begin::Col-->
                     <div class="col-xl-9 fv-row">
-                        <textarea name="project_description" class="form-control form-control-solid h-100px"></textarea>
+                        <textarea name="project_description"
+                            class="form-control form-control-solid h-100px">{{ $settings->project_description }}</textarea>
                     </div>
                     <!--begin::Col-->
                 </div>
@@ -178,7 +189,7 @@
                     <!--end::Col-->
                     <!--begin::Col-->
                     <div class="col-xl-9 fv-row">
-                        <textarea name="address" class="form-control form-control-solid h-100px"></textarea>
+                        <textarea name="address" class="form-control form-control-solid h-100px">{{ $settings->address }}</textarea>
                     </div>
                     <!--begin::Col-->
                 </div>
@@ -193,11 +204,13 @@
                     <div class="col-xl-9">
                         <div class="d-flex fw-bold h-100">
                             <div class="form-check form-check-custom form-check-solid me-9">
-                                <input class="form-check-input" type="checkbox" value="" id="email" />
+                                <input class="form-check-input" type="checkbox" value="{{ $settings->project_name }}"
+                                    id="email" />
                                 <label class="form-check-label ms-3" for="email">Email</label>
                             </div>
                             <div class="form-check form-check-custom form-check-solid">
-                                <input class="form-check-input" type="checkbox" value="" id="phone" checked="checked" />
+                                <input class="form-check-input" type="checkbox" value="{{ $settings->project_name }}"
+                                    id="phone" checked="checked" />
                                 <label class="form-check-label ms-3" for="phone">Phone</label>
                             </div>
                         </div>
@@ -214,8 +227,8 @@
                     <!--begin::Col-->
                     <div class="col-xl-9">
                         <div class="form-check form-switch form-check-custom form-check-solid">
-                            <input class="form-check-input" type="checkbox" value="" id="status" name="status"
-                                checked="checked" />
+                            <input class="form-check-input" type="checkbox" value="{{ $settings->project_name }}"
+                                id="status" name="status" checked="checked" />
                             <label class="form-check-label fw-bold text-gray-400 ms-3" for="status">Active</label>
                         </div>
                     </div>

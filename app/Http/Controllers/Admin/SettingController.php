@@ -17,15 +17,7 @@ class SettingController extends Controller
     public function index()
     {
 
-        $settings = Setting::all();
-
-        $settings = collect($settings)->map(function ($item) {
-            return [
-                'title' => $item->name,
-                'value' => $item->value
-            ];
-        });
-
+        $settings = Setting::getAll();
 
         return view('panel.setting.index', compact('settings'));
     }

@@ -83,7 +83,7 @@ class ServiceController extends Controller
     {
         $service = Service::query()->where('id', $id)->first();
         $categories = Category::query()->where('status', Category::PUBLISHED_STATUS)->get();
-        return view('panel.services.edit', compact('service','categories'));
+        return view('panel.services.edit', compact('service', 'categories'));
     }
 
     /**
@@ -95,6 +95,7 @@ class ServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd($request->all());
         $service = Service::query()->where('id', $id)->first();
 
         $request->validate([
@@ -109,7 +110,6 @@ class ServiceController extends Controller
             $request->merge(['media_id' => MediaFileService::publicUpload($request->file('icon'))->id]);
             if ($service->media) $service->media()->delete();
         } else {
-
             $request->merge(['media_id' => $service->media_id]);
         }
 

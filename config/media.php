@@ -3,7 +3,7 @@ return [
     "MediaTypeServices" => [
         "image" => [
             "extensions" => [
-                "png", "jpg", "jpeg"
+                "png", "jpg", "jpeg", "svg"
             ],
             "handler" => \App\Services\ImageFileService::class
         ],

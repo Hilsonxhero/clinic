@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 
 <head>
     <meta charset="utf-8">
-    <title>Silicon | Medical Landing</title>
+    <title>کلینیک امید - صفحه اصلی</title>
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="Silicon - Multipurpose Technology Bootstrap Template">
@@ -22,20 +22,20 @@
     {{-- <link rel="mask-icon" href="{{asset('assets/favicon/safari-pinned-tab.svg')}}" color="#6366f1"> --}}
     {{-- <link rel="shortcut icon" href="{{asset('assets/favicon/favicon.ico')}}"> --}}
     <meta name="msapplication-TileColor" content="#080032">
-    <meta name="msapplication-config" content="{{asset('assets/favicon/browserconfig.xml')}}">
+    <meta name="msapplication-config" content="{{ asset('assets/favicon/browserconfig.xml') }}">
     <meta name="theme-color" content="#ffffff">
 
     <!-- Vendor Styles -->
 
-    <link rel="stylesheet" media="screen" href="{{asset('assets/vendor/boxicons/css/boxicons.min.css')}}" />
-    <link rel="stylesheet" media="screen" href="{{asset('assets/vendor/swiper/swiper-bundle.min.css')}}" />
+    <link rel="stylesheet" media="screen" href="{{ asset('assets/vendor/boxicons/css/boxicons.min.css') }}" />
+    <link rel="stylesheet" media="screen" href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" />
     <link rel="stylesheet" media="screen"
-        href="{{asset('assets/vendor/lightgallery/css/lightgallery-bundle.min.css')}}" />
+        href="{{ asset('assets/vendor/lightgallery/css/lightgallery-bundle.min.css') }}" />
 
     <!-- Main Theme Styles + Bootstrap -->
-    <link rel="stylesheet" media="screen" href="{{asset('assets/css/theme.min.css')}}">
+    <link rel="stylesheet" media="screen" href="{{ asset('assets/css/theme.min.css') }}">
 
-    <link rel="stylesheet" media="screen" href="{{asset('assets/css/custom.css')}}">
+    <link rel="stylesheet" media="screen" href="{{ asset('assets/css/custom.css') }}">
 
     <!-- Page loading styles -->
     <style>
@@ -117,49 +117,37 @@
                 transform: rotate(360deg);
             }
         }
+
     </style>
 
     <!-- Theme mode -->
     <script>
         let mode = window.localStorage.getItem('mode'),
-      root = document.getElementsByTagName('html')[0];
-    if (mode !== null && mode === 'dark') {
-      root.classList.add('dark-mode');
-    } else {
-      root.classList.remove('dark-mode');
-    }
+            root = document.getElementsByTagName('html')[0];
+        if (mode !== null && mode === 'dark') {
+            root.classList.add('dark-mode');
+        } else {
+            root.classList.remove('dark-mode');
+        }
     </script>
 
     <!-- Page loading scripts -->
     <script>
-        (function () {
-      window.onload = function () {
-        const preloader = document.querySelector('.page-loading');
-        preloader.classList.remove('active');
-        setTimeout(function () {
-          preloader.remove();
-        }, 1000);
-      };
-    })();
+        (function() {
+            window.onload = function() {
+                const preloader = document.querySelector('.page-loading');
+                preloader.classList.remove('active');
+                setTimeout(function() {
+                    preloader.remove();
+                }, 1000);
+            };
+        })();
     </script>
 
-    <!-- Google Tag Manager -->
-    <script>
-        (function (w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js'
-      });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true;
-      j.src =
-        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-WKV3GT5');
-    </script>
+
+    @yield('css')
+
+
 </head>
 
 
@@ -170,7 +158,7 @@
     <!-- Page loading spinner -->
     <div class="page-loading active">
         <div class="page-loading-inner">
-            <div class="page-spinner"></div><span>Loading...</span>
+            <div class="page-spinner"></div><span>در حال بارگزاری</span>
         </div>
     </div>
 
@@ -202,18 +190,17 @@
 
     <!-- Vendor Scripts -->
 
-    <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     {{-- <script src="{{asset('assets/vendor/smooth-scroll/smooth-scroll.polyfills.min.js')}}"></script> --}}
     {{-- <script src="{{asset('assets/vendor/rellax/rellax.min.js')}}"></script> --}}
-    <script src="{{asset('assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+    <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
     {{-- <script src="{{asset('assets/vendor/lightgallery/lightgallery.min.js')}}"></script>
     <script src="{{asset('assets/vendor/lightgallery/plugins/fullscreen/lg-fullscreen.min.js')}}"></script>
     <script src="{{asset('assets/vendor/lightgallery/plugins/zoom/lg-zoom.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/lightgallery/plugins/video/lg-video.min.js')}}"></script>
- --}}
+    <script src="{{asset('assets/vendor/lightgallery/plugins/video/lg-video.min.js')}}"></script> --}}
 
     <!-- Main Theme Script -->
-    <script src="{{asset('assets/js/theme.min.js')}}"></script>
+    <script src="{{ asset('assets/js/theme.min.js') }}"></script>
 </body>
 
 </html>

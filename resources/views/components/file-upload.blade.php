@@ -13,7 +13,7 @@
         <i class="bi bi-pencil-fill fs-7"></i>
         <!--end::Icon-->
         <!--begin::Inputs-->
-        <input type="file" name="{{ $name }}" accept=".png, .jpg, .jpeg,.gif" />
+        <input type="file" name="{{ $name }}" />
         <input type="hidden" name="avatar_remove" />
         <!--end::Inputs-->
     </label>

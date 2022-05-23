@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Page;
 use App\Models\Service;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -29,7 +31,9 @@ class ViewServiceProvider extends ServiceProvider
 
         View::composer('components.header', function ($view) {
             $services = Service::query()->where('status', Service::ACTIVE_STATUS)->get();
-            $view->with(compact('services'));
+            $logo = Setting::setting('logo');
+            // dd($logo);
+            $view->with(compact('services', 'logo'));
         });
     }
 }

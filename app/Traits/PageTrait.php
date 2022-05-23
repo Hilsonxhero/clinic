@@ -3,10 +3,10 @@
 namespace App\Traits;
 
 
-trait SettingTrait
+trait PageTrait
 {
 
-    public function scopeSetting($query, $name)
+    public function scopePage($query, $name)
     {
         if (str_contains($name, ".")) {
             $item_array = explode(".", $name);
@@ -17,8 +17,7 @@ trait SettingTrait
         } else {
             $setting = $query->whereName($name)->first();
             if ($setting->value == null) return null;
-            if (is_array($setting->value))  return (object) $setting->value;
-            return $setting->value;
+            return (object) $setting->value;
         }
     }
 
@@ -30,11 +29,9 @@ trait SettingTrait
         );
     }
 
-
-    public function scopeGetAll($query)
+    public function scopeGetAll($query, $name)
     {
-        $settings = $query->get();
-        $settings = collect($settings)->toArray();
-        return (object) array_column($settings, 'value', 'name');
+        $item = $query->where('name', $name)->first();
+        return (object) $item->value;
     }
 }

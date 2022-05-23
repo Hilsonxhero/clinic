@@ -1,8 +1,46 @@
-.text-start{
+.text-start {
     text-align: right !important;
 }
 
-.text-right{
+.text-right {
     text-align: right !important;
 }
 
+.article-cover {
+    height: 16rem !important;
+    max-height: 16rem !important;
+}
+
+.article-cover img {
+    height: 100%;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.article-title {
+    /* height: 2rem; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+
+.article-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.article-dec {
+    padding: 0 1.5rem;
+}

@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="card-body text-center pt-0">
-                    <x-file-upload name="profile" value="{{ $service->icon }}"></x-file-upload>
+                    <x-file-upload name="icon" value="{{ $service->icon }}"></x-file-upload>
                     <div class="text-muted fs-7">
                         تصویر سرویس را تنظیم کنید. فقط فایل های تصویری *.png، *.jpg و *.jpeg پذیرفته می شوند
                     </div>

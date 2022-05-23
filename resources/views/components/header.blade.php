@@ -184,7 +184,7 @@
             </div>
 
             <a href="index.html" class="navbar-brand pe-3">
-                <img src="{{ asset('assets/img/logo.svg') }}" width="140" alt="">
+                <img src="{{ '/storage/' . $logo }}" width="140" alt="">
             </a>
 
 

@@ -17,7 +17,7 @@ class Article extends Model
 
     static $statuses = [self::PUBLISHED_STATUS, self::UNPUBLISHED_STATUS];
 
-    protected $appends  = ['banner', 'tags_data'];
+    protected $appends  = ['banner', 'tags_data', 'created_date'];
 
     protected $fillable = [
         'title', 'slug', 'description', 'body', 'category_id', 'media_id', 'status', 'views', 'likes',
@@ -62,6 +62,12 @@ class Article extends Model
         $values = array_map('array_pop', $this->tags);
         return implode(",", $values);
     }
+
+    public function getCreatedDateAttribute()
+    {
+        return verta($this->attributes['created_at'])->formatDifference();
+    }
+
 
 
     /**
