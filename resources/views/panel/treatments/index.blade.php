@@ -19,8 +19,8 @@
                         </svg>
                     </span>
                     <!--end::Svg Icon-->
-                    <input type="text" data-kt-ecommerce-article-filter="search"
-                        class="form-control form-control-solid w-250px ps-14" placeholder="جستجو مقاله" />
+                    <input type="text" data-kt-ecommerce-treatment-filter="search"
+                        class="form-control form-control-solid w-250px ps-14" placeholder="جستجو روش درمان" />
                 </div>
                 <!--end::Search-->
             </div>
@@ -28,7 +28,7 @@
             <!--begin::Card toolbar-->
             <div class="card-toolbar">
                 <!--begin::Add customer-->
-                <a href="{{ route('panel.articles.create') }}" class="btn btn-primary">مقاله جدید</a>
+                <a href="{{ route('panel.treatments.create') }}" class="btn btn-primary">روش درمان جدید</a>
                 <!--end::Add customer-->
             </div>
             <!--end::Card toolbar-->
@@ -37,7 +37,7 @@
         <!--begin::Card body-->
         <div class="card-body pt-0">
             <!--begin::Table-->
-            <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_article_table">
+            <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_treatment_table">
                 <!--begin::Table head-->
                 <thead>
                     <!--begin::Table row-->
@@ -45,20 +45,20 @@
                         <th class="w-10px pe-2">
                             <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
                                 <input class="form-check-input" type="checkbox" data-kt-check="true"
-                                    data-kt-check-target="#kt_ecommerce_article_table .form-check-input" value="1" />
+                                    data-kt-check-target="#kt_ecommerce_treatment_table .form-check-input" value="1" />
                             </div>
                         </th>
-                        <th class="min-w-250px">عنوان</th>
-                        <th class="min-w-150px">دسته بندی</th>
-                        <th class="min-w-150px"> وضعیت</th>
-                        <th class="text-end min-w-70px">عملیات</th>
+                        <th class="">عنوان </th>
+                        <th class="">دسته بندی</th>
+                        <th class=""> وضعیت </th>
+                        <th class="max-w-100px">عملیات</th>
                     </tr>
                     <!--end::Table row-->
                 </thead>
                 <!--end::Table head-->
                 <!--begin::Table body-->
                 <tbody class="fw-bold text-gray-600">
-                    @foreach ($articles as $article)
+                    @foreach ($treatments as $treatment)
                         <tr>
                             <!--begin::Checkbox-->
                             <td>
@@ -67,59 +67,50 @@
                                 </div>
                             </td>
                             <!--end::Checkbox-->
-                            <!--begin::article=-->
+                            <!--begin::treatment=-->
                             <td>
                                 <div class="d-flex">
-                                    <!--begin::Thumbnail-->
                                     <a href="" class="symbol symbol-50px">
                                         <span class="symbol-label"
-                                            style="background-image:url({{ $article->banner }});"></span>
+                                            style="background-image:url({{ $treatment->banner }});"></span>
                                     </a>
-                                    <!--end::Thumbnail-->
                                     <div class="ms-5">
-                                        <!--begin::Title-->
                                         <a class="text-gray-800 text-hover-primary fs-5 fw-bolder mb-1"
-                                            data-kt-ecommerce-article-filter="article_name">
+                                            data-kt-ecommerce-treatment-filter="treatment_name">
 
-                                            {{ $article->title }}
+                                            {{ $treatment->title }}
 
                                         </a>
-                                        <!--end::Title-->
-                                        <!--begin::Description-->
                                         <div class="text-muted fs-7 fw-bolder">
-                                            {!! truncate($article->description, 80) !!}
+                                            {!! truncate($treatment->description, 90) !!}
                                         </div>
-                                        <!--end::Description-->
                                     </div>
                                 </div>
                             </td>
                             <td>
                                 <div class="badge badge-light-primary">
-                                    {{ $article->category ? $article->category->title : 'ندارد' }}</div>
+                                    {{ $treatment->category ? $treatment->category->title : 'ندارد' }}</div>
                             </td>
                             <td>
-
-                                @switch($article->status)
-                                    @case(\App\Models\article::PUBLISHED_STATUS)
-                                        <div class="badge badge-light-success">@lang($article->status)</div>
+                                @switch($treatment->status)
+                                    @case(\App\Models\Treatment::PUBLISHED_STATUS)
+                                        <div class="badge badge-light-success">@lang($treatment->status)</div>
                                     @break
 
-                                    @case(\App\Models\article::UNPUBLISHED_STATUS)
-                                        <div class="badge badge-light-danger">@lang($article->status)</div>
+                                    @case(\App\Models\Treatment::UNPUBLISHED_STATUS)
+                                        <div class="badge badge-light-danger">@lang($treatment->status)</div>
                                     @break
 
                                     @default
                                 @endswitch
-                                <!--begin::Badges-->
-
-                                <!--end::Badges-->
                             </td>
-                            <!--end::Type=-->
-                            <!--begin::Action=-->
+
+
+
                             <td>
                                 <div class="d-flex justify-content-end flex-shrink-0">
 
-                                    <a href="{{ route('panel.articles.edit', $article->id) }}"
+                                    <a href="{{ route('panel.treatments.edit', $treatment->id) }}"
                                         class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                         <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                         <span class="svg-icon svg-icon-3">
@@ -143,8 +134,8 @@
                                     </form>
 
 
-                                    <a data-id="{{ json_encode($article->id) }}"
-                                        data-kt-ecommerce-article-filter="delete_row" href="#"
+                                    <a data-id="{{ json_encode($treatment->id) }}"
+                                        data-kt-ecommerce-treatment-filter="delete_row" href="#"
                                         class="btn btn-icon btn-bg-light btn-active-color-danger btn-sm">
                                         <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                         <span class="svg-icon svg-icon-3">
@@ -186,12 +177,12 @@
 
     <script>
         "use strict";
-        var KTAppEcommercearticles = (function() {
+        var KTAppEcommercetreatments = (function() {
             var t,
                 e,
                 n = () => {
                     t.querySelectorAll(
-                        '[data-kt-ecommerce-article-filter="delete_row"]'
+                        '[data-kt-ecommerce-treatment-filter="delete_row"]'
                     ).forEach((t) => {
                         t.addEventListener("click", function(t) {
 
@@ -202,10 +193,11 @@
                             t.preventDefault();
                             const n = t.target.closest("tr"),
                                 o = n.querySelector(
-                                    '[data-kt-ecommerce-article-filter="article_name"]'
+                                    '[data-kt-ecommerce-treatment-filter="treatment_name"]'
                                 ).innerText;
                             Swal.fire({
-                                text: "آیا از حذف مقاله " + o + " اطمینان دارید ؟ ",
+                                text: "آیا از حذف روش درمان " + o +
+                                    " اطمینان دارید ؟ ",
                                 icon: "warning",
                                 showCancelButton: !0,
                                 buttonsStyling: !1,
@@ -220,7 +212,7 @@
                                     t.dismiss
                                 } else {
                                     $("#js-delete-form").attr('action',
-                                        `/panel/admin/articles/${id}`)
+                                        `/panel/admin/treatments/${id}`)
                                     $("#js-delete-form").submit()
                                 }
                             });
@@ -229,7 +221,7 @@
                 };
             return {
                 init: function() {
-                    (t = document.querySelector("#kt_ecommerce_article_table")) &&
+                    (t = document.querySelector("#kt_ecommerce_treatment_table")) &&
                     ((e = $(t).DataTable({
                             info: !1,
                             order: [],
@@ -251,7 +243,7 @@
                             n();
                         }),
                         document
-                        .querySelector('[data-kt-ecommerce-article-filter="search"]')
+                        .querySelector('[data-kt-ecommerce-treatment-filter="search"]')
                         .addEventListener("keyup", function(t) {
                             e.search(t.target.value).draw();
                         }),
@@ -260,7 +252,7 @@
             };
         })();
         KTUtil.onDOMContentLoaded(function() {
-            KTAppEcommercearticles.init();
+            KTAppEcommercetreatments.init();
         });
     </script>
 @endsection

@@ -37,6 +37,11 @@ Route::prefix('panel/admin')->name('panel.')->group(function () {
     // questions
     Route::resource('questions', App\Http\Controllers\Admin\QuestionController::class);
 
+    // questions
+    Route::resource('treatments', App\Http\Controllers\Admin\TreatmentMethodController::class);
+
+
+
     // page about
     Route::get('page/about', [App\Http\Controllers\Admin\PageController::class, 'about'])
         ->name('page.about.index');;
@@ -48,4 +53,11 @@ Route::prefix('panel/admin')->name('panel.')->group(function () {
         ->name('page.landing.index');
     Route::post('page/landing', [App\Http\Controllers\Admin\PageController::class, 'landingStore'])
         ->name('page.landing.store');
+
+
+    // setting
+    Route::get('page/setting', [App\Http\Controllers\Admin\SettingController::class, 'index'])
+        ->name('page.setting.index');
+    Route::post('page/setting', [App\Http\Controllers\Admin\SettingController::class, 'update'])
+        ->name('page.setting.update');
 });

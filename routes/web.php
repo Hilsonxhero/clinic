@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\LandingController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,12 +14,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [LandingController::class, 'landing'])->name('page.landing');
 
-Route::get('/', function () {
-    return view('application.landing');
-});
+Route::prefix('application')->name('application.')->group(function () {
 
-
-Route::get('/about', function () {
-    return view('application.pages.about');
+    Route::get('/about', [PageController::class, 'about'])->name('page.about');
 });

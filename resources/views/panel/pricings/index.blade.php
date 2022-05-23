@@ -70,7 +70,7 @@
 
 
                             <td data-kt-ecommerce-pricing-filter="pricing_name">
-                                {{ $pricing->service->title }}
+                                {{ $pricing->service ? $pricing->service->title : 'ندارد' }}
                             </td>
 
                             <td>

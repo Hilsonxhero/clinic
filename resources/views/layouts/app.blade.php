@@ -35,6 +35,8 @@
     <!-- Main Theme Styles + Bootstrap -->
     <link rel="stylesheet" media="screen" href="{{asset('assets/css/theme.min.css')}}">
 
+    <link rel="stylesheet" media="screen" href="{{asset('assets/css/custom.css')}}">
+
     <!-- Page loading styles -->
     <style>
         .page-loading {

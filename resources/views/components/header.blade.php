@@ -11,26 +11,28 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 p-0">
 
                         <li class="nav-item">
-                            <a href="docs/getting-started.html" class="nav-link">صفحه اصلی</a>
+                            <a href="{{ route('page.landing') }}" class="nav-link">صفحه اصلی</a>
                         </li>
 
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">خدمات ما</a>
                             <ul class="dropdown-menu">
-                                <li><a href="account-details.html" class="dropdown-item">Account Details</a></li>
-                                <li><a href="account-security.html" class="dropdown-item">Security</a></li>
+                                @foreach ($services as $service)
+                                    <li><a href="" class="dropdown-item text-start">{{ $service->title }}</a></li>
+                                @endforeach
+                                {{-- <li><a href="account-security.html" class="dropdown-item">Security</a></li>
                                 <li><a href="account-notifications.html" class="dropdown-item">Notifications</a></li>
                                 <li><a href="account-messages.html" class="dropdown-item">Messages</a></li>
                                 <li><a href="account-saved-items.html" class="dropdown-item">Saved Items</a></li>
                                 <li><a href="account-collections.html" class="dropdown-item">My Collections</a></li>
                                 <li><a href="account-payment.html" class="dropdown-item">Payment Details</a></li>
                                 <li><a href="account-signin.html" class="dropdown-item">Sign In</a></li>
-                                <li><a href="account-signup.html" class="dropdown-item">Sign Up</a></li>
+                                <li><a href="account-signup.html" class="dropdown-item">Sign Up</a></li> --}}
                             </ul>
                         </li>
 
                         <li class="nav-item">
-                            <a href="docs/getting-started.html" class="nav-link">درباره ما</a>
+                            <a href="{{ route('application.page.about') }}" class="nav-link">درباره ما</a>
                         </li>
 
                         <li class="nav-item">

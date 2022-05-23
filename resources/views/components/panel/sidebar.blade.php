@@ -205,8 +205,7 @@
                     </div>
 
                     <div class="menu-item">
-                        <a class="menu-link"
-                            href="https://preview.keenthemes.com/metronic8/demo1/layout-builder.html">
+                        <a class="menu-link" href="{{ route('panel.treatments.index') }}">
                             <span class="menu-icon">
                                 <!--begin::Svg Icon | path: icons/duotune/general/gen019.svg-->
                                 <span class="svg-icon svg-icon-2">
@@ -270,11 +269,11 @@
 
 
 
-                    <div class="menu-item">
+                    {{-- <div class="menu-item">
                         <a class="menu-link"
                             href="https://preview.keenthemes.com/metronic8/demo1/layout-builder.html">
                             <span class="menu-icon">
-                                <!--begin::Svg Icon | path: icons/duotune/general/gen019.svg-->
+
                                 <span class="svg-icon svg-icon-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         fill="none">
@@ -286,14 +285,14 @@
                                             fill="black" />
                                     </svg>
                                 </span>
-                                <!--end::Svg Icon-->
+
                             </span>
                             <span class="menu-title">پرسش و پاسخ</span>
                         </a>
-                    </div>
+                    </div> --}}
 
 
-                    <div class="menu-item">
+                    {{-- <div class="menu-item">
                         <a class="menu-link"
                             href="https://preview.keenthemes.com/metronic8/demo1/layout-builder.html">
                             <span class="menu-icon">
@@ -314,6 +313,8 @@
                             <span class="menu-title">نظرسنجی ها</span>
                         </a>
                     </div>
+
+
                     <div class="menu-item">
                         <a class="menu-link"
                             href="https://preview.keenthemes.com/metronic8/demo1/layout-builder.html">
@@ -334,7 +335,7 @@
                             </span>
                             <span class="menu-title"> مشاوره ها</span>
                         </a>
-                    </div>
+                    </div> --}}
 
 
 
@@ -417,8 +418,7 @@
 
 
                     <div class="menu-item">
-                        <a class="menu-link"
-                            href="{{ route('panel.questions.index') }}">
+                        <a class="menu-link" href="{{ route('panel.questions.index') }}">
                             <span class="menu-icon">
                                 <!--begin::Svg Icon | path: icons/duotune/general/gen019.svg-->
                                 <span class="svg-icon svg-icon-2">
@@ -468,7 +468,7 @@
                         </div>
                     </div>
 
-                    <div class="menu-item">
+                    {{-- <div class="menu-item">
                         <a class="menu-link"
                             href="https://preview.keenthemes.com/metronic8/demo1/layout-builder.html">
                             <span class="menu-icon">
@@ -510,11 +510,10 @@
                             </span>
                             <span class="menu-title">مدیریت اطلاع رسانی</span>
                         </a>
-                    </div>
+                    </div> --}}
 
                     <div class="menu-item">
-                        <a class="menu-link"
-                            href="https://preview.keenthemes.com/metronic8/demo1/layout-builder.html">
+                        <a class="menu-link" href="{{ route('panel.page.setting.index') }}">
                             <span class="menu-icon">
                                 <!--begin::Svg Icon | path: icons/duotune/general/gen019.svg-->
                                 <span class="svg-icon svg-icon-2">

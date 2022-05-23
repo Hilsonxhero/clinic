@@ -10,9 +10,63 @@ use App\Http\Controllers\Controller;
 class PageController extends Controller
 {
 
-    public function landing(Request $request)
+    public function landing()
     {
+        $data = (object) Page::query()->where('name', 'landing')->firstOrCreate(
+            ['name' => 'landing'],
+            ['value' =>  ['title' => 'عنوان اصلی', 'subtitle' => 'عنوان', 'pic1' => '', 'pic2' => '', 'about_title' => 'عنوان درباره ما', 'about_body' => 'متن درباره ما',]]
+        )->value;
+
+        return view('panel.pages.landing', compact('data'));
     }
+
+
+    public function landingStore(Request $request)
+    {
+
+        $request->validate([
+            'title' => ['required'],
+            'subtitle' => ['required'],
+            'about_title' => ['required'],
+            'about_body' => ['required']
+        ]);
+
+        // dd($request->all());
+
+        $about_data =  Page::query()->where('name', 'landing')->first()->value;
+
+        foreach ($request->files as $key => $value) {
+            if ($request->file($key)) {
+                $request->merge([$key . '_path' => MediaFileService::publicUpload($request->file($key))->files['original']]);
+            }
+        }
+
+        if (!$request->file('pic1')) {
+            $request->merge(['pic1_path' => $about_data['pic1']]);
+        }
+        if (!$request->file('pic2')) {
+            $request->merge(['pic2_path' => $about_data['pic2']]);
+        }
+
+
+        $data = [
+            'title' => $request->title,
+            'subtitle' => $request->subtitle,
+            'about_title' => $request->about_title,
+            'about_body' => $request->about_body,
+            'pic1' => $request->pic1_path,
+            'pic2' => $request->pic2_path,
+        ];
+
+        Page::query()->updateOrCreate(
+            ['name' => 'landing'],
+            ['value' =>  $data]
+        );
+
+        return redirect()->back()->with('success', '  ذخیره تغییرات با موفقیت انجام شد');
+    }
+
+
     public function services(Request $request)
     {
     }
@@ -23,7 +77,6 @@ class PageController extends Controller
             ['name' => 'about'],
             ['value' =>  ['title' => 'درباره ما', 'body' => 'متن درباره ما', 'pic1' => '', 'pic2' => '', 'pic3' => '', 'pic4' => '',]]
         )->value;
-
 
         return view('panel.pages.about', compact('data'));
     }

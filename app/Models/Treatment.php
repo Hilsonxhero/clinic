@@ -2,13 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Support\Str;
-use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Article extends Model
+class Treatment extends Model
 {
     use HasFactory, SoftDeletes, Sluggable;
 
@@ -28,17 +27,12 @@ class Article extends Model
         'tags' => 'json'
     ];
 
-    public static function booted()
-    {
-        static::saving(function ($article) {
-            $article->short_link = Str::random(7);
-        });
-    }
 
     public function media()
     {
         return $this->belongsTo(Media::class, 'media_id');
     }
+
 
     public function category()
     {

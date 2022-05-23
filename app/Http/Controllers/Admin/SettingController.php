@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Setting;
 use Illuminate\Http\Request;
+use App\Services\MediaFileService;
+use App\Http\Controllers\Controller;
 
 class SettingController extends Controller
 {
@@ -14,7 +16,18 @@ class SettingController extends Controller
      */
     public function index()
     {
-        //
+
+        $settings = Setting::all();
+
+        $settings = collect($settings)->map(function ($item) {
+            return [
+                'title' => $item->name,
+                'value' => $item->value
+            ];
+        });
+
+
+        return view('panel.setting.index', compact('settings'));
     }
 
     /**
@@ -67,9 +80,35 @@ class SettingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $options = [
+            "phone_1",
+            "phone_2",
+            "mobile_1",
+            "mobile_2",
+            "email",
+            "project_name",
+            "project_description",
+            "address",
+            "map",
+            "copyright",
+            "social_media",
+            "logo",
+        ];
+
+        foreach ($options as $option) {
+            if (!$request->{$option}) {
+                continue;
+            }
+            if ($request->hasFile($option)) {
+                $request->merge([$option . '_media' => MediaFileService::publicUpload($request->{$option})->files['original']]);
+                Setting::set($option, $request->{$option . '_media'});
+            } else {
+                Setting::set($option, $request->{$option});
+            }
+        }
+        return redirect()->back()->with('success', '  ذخیره تغییرات با موفقیت انجام شد');
     }
 
     /**

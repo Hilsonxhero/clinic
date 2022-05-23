@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Treatment;
 use Illuminate\Http\Request;
+use App\Services\MediaFileService;
+use App\Http\Controllers\Controller;
 
 class TreatmentMethodController extends Controller
 {
@@ -14,7 +17,8 @@ class TreatmentMethodController extends Controller
      */
     public function index()
     {
-        //
+        $treatments = Treatment::query()->get();
+        return view('panel.treatments.index', compact('treatments'));
     }
 
     /**
@@ -24,7 +28,9 @@ class TreatmentMethodController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::query()->where('status', Category::PUBLISHED_STATUS)->get();
+
+        return view('panel.treatments.create', compact('categories'));
     }
 
     /**
@@ -35,7 +41,37 @@ class TreatmentMethodController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => ['required', 'min:3', 'string'],
+            'body' => ['required'],
+            'description' => ['nullable'],
+            'category_id' => ['nullable', 'exists:categories,id'],
+            'banner' => ['nullable', 'file'],
+            'meta_title' => ['required'],
+            'meta_description' => ['required'],
+            'meta_keywords' => ['required'],
+        ]);
+
+        if ($request->file('banner')) $request->merge(['media_id' => MediaFileService::publicUpload($request->file('banner'))->id]);
+
+        $article = Treatment::query()->create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'body' => $request->body,
+            'media_id' => $request->media_id,
+            'category_id' => $request->category_id,
+            'tags' => json_decode($request->tags)
+        ]);
+
+        $article->meta()->create([
+            "title" => $request->meta_title,
+            "description" => $request->meta_description,
+            "keywords" => json_decode($request->meta_keywords),
+        ]);
+
+
+        return redirect()->route('panel.treatments.index')
+            ->with('success', 'ایجاد روش درمان با موفقیت انجام شد');
     }
 
     /**
@@ -57,7 +93,14 @@ class TreatmentMethodController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Category::query()->where('status', Category::PUBLISHED_STATUS)->get();
+        $treatment = Treatment::query()->where('id', $id)->first();
+
+        // $values = array_map('array_pop', $treatment->tags);
+        // $ss = implode(",", $values);
+        // dd($ss);
+
+        return view('panel.treatments.edit', compact('categories', 'treatment'));
     }
 
     /**
@@ -69,7 +112,47 @@ class TreatmentMethodController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title' => ['required', 'min:3', 'string'],
+            'body' => ['required'],
+            'description' => ['nullable'],
+            'category_id' => ['nullable', 'exists:categories,id'],
+            'banner' => ['nullable', 'file'],
+            'meta_title' => ['required'],
+            'meta_description' => ['required'],
+            'meta_keywords' => ['required'],
+        ]);
+
+        $article = Treatment::query()->where('id', $id)->first();
+
+
+        if ($request->file('banner')) {
+            $request->merge(['media_id' => MediaFileService::publicUpload($request->file('banner'))->id]);
+            if ($article->media) $article->media()->delete();
+        } else {
+
+            $request->merge(['media_id' => $article->media_id]);
+        }
+
+
+        $article->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'body' => $request->body,
+            'media_id' => $request->media_id,
+            'category_id' => $request->category_id,
+            'tags' => json_decode($request->tags)
+        ]);
+
+        $article->meta()->update([
+            "title" => $request->meta_title,
+            "description" => $request->meta_description,
+            "keywords" => json_decode($request->meta_keywords),
+        ]);
+
+
+        return redirect()->route('panel.treatments.index')
+            ->with('success', 'ویرایش روش درمان با موفقیت انجام شد');
     }
 
     /**
@@ -80,6 +163,10 @@ class TreatmentMethodController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = Treatment::where('id', $id)->first();
+        $item->delete();
+        if ($item->media) $item->media->delete();
+
+        return redirect()->back()->with('success', 'حذف روش درمان با موفقیت انجام شد');
     }
 }
