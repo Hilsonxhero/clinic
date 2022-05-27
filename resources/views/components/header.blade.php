@@ -36,7 +36,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="docs/getting-started.html" class="nav-link">ارتباط با ما</a>
+                            <a href="{{ route('application.page.contacts') }}" class="nav-link">ارتباط با ما</a>
                         </li>
 
 

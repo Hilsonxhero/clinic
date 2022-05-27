@@ -35,5 +35,12 @@ class ViewServiceProvider extends ServiceProvider
             // dd($logo);
             $view->with(compact('services', 'logo'));
         });
+
+
+        View::composer('*', function ($view) {
+            $setting = Setting::getAll();
+            // dd($setting);
+            $view->with(compact('setting'));
+        });
     }
 }

@@ -5,7 +5,6 @@
 
     <x-landing.hero :landing="$landing"></x-landing.hero>
 
-
     <!-- Icon boxes (Features) -->
     <section class="container py-5 mb-2 mb-md-4 mb-lg-5 d-none">
         <div class="row row-cols-1 row-cols-md-3 g-4 pt-2 pt-md-4 pb-lg-2">
@@ -669,40 +668,6 @@
 
 
     <!-- Contacts -->
-    <section class="container pb-5 mb-1 mb-md-4 mb-lg-5">
-        <div class="row pb-xl-3">
-            <div class="col-xl-5 col-md-6 offset-xl-1">
-                <h2 class="h1 pb-4 mb-1 mb-lg-3">Get Free Professional Consultation</h2>
-                <ul class="list-unstyled pb-3 mb-0 mb-lg-3 p-0">
-                    <li class="d-flex mb-3">
-                        <i class="bx bx-map text-muted fs-xl mt-1 me-2"></i>
-                        Noe Valley Bakery 24th Street, San Francisco, CA, USA
-                    </li>
-                    <li class="d-flex mb-3">
-                        <i class="bx bx-phone-call text-muted fs-xl mt-1 me-2"></i>
-                        (406) 555-0120
-                    </li>
-                    <li class="d-flex mb-3">
-                        <i class="bx bx-time text-muted fs-xl mt-1 me-2"></i>
-                        <div>
-                            <div><span class="text-dark fw-semibold me-1">Mon – Fri:</span>9:00 am – 22:00 pm</div>
-                            <div><span class="text-dark fw-semibold me-1">Sat – Sun:</span>9:00 am – 20:00 pm</div>
-                        </div>
-                    </li>
-                    <li class="d-flex mb-3">
-                        <i class="bx bx-envelope text-muted fs-xl mt-1 me-2"></i>
-                        example@email.com
-                    </li>
-                </ul>
-                <a href="#" class="btn btn-primary shadow-primary btn-lg">Make an appointment</a>
-            </div>
-            <div class="col-md-6 pb-2 pb-md-0 mb-4 mb-md-0">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d11884.324654930242!2d51.34139670256814!3d35.70194451454766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m3!3m2!1d35.7004105!2d51.3369498!4m0!5e0!3m2!1sfa!2s!4v1652361783968!5m2!1sfa!2s"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
 
-        </div>
-    </section>
+    <x-landing.contacts :setting="$setting"></x-landing.contacts>
 @endsection

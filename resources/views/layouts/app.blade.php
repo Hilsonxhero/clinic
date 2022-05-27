@@ -155,40 +155,25 @@
 
 <body class="rtl-theme">
 
-    <!-- Page loading spinner -->
     <div class="page-loading active">
         <div class="page-loading-inner">
             <div class="page-spinner"></div><span>در حال بارگزاری</span>
         </div>
     </div>
 
-
-    <!-- Page wrapper for sticky footer -->
-    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
-
     <main class="page-wrapper">
-
-
+     
         <x-header></x-header>
-
-
         @yield('content')
-
-
     </main>
 
 
-    <!-- Footer -->
     <x-footer></x-footer>
 
-    <!-- Back to top button -->
     <a href="#top" class="btn-scroll-top" data-scroll>
         <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
         <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
     </a>
-
-
-    <!-- Vendor Scripts -->
 
     <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     {{-- <script src="{{asset('assets/vendor/smooth-scroll/smooth-scroll.polyfills.min.js')}}"></script> --}}

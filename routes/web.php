@@ -14,9 +14,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', [LandingController::class, 'landing'])->name('page.landing');
 
-Route::prefix('application')->name('application.')->group(function () {
-
+Route::prefix('')->name('application.')->group(function () {
     Route::get('/about', [PageController::class, 'about'])->name('page.about');
+    Route::get('/contacts', [PageController::class, 'contacts'])->name('page.contacts');
 });
