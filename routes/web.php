@@ -23,4 +23,6 @@ Route::prefix('')->name('application.')->group(function () {
     Route::get('/contacts', [PageController::class, 'contacts'])->name('page.contacts');
     Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
     Route::get('/articles/{slug}', [ArticleController::class, 'show'])->name('articles.show');
+    Route::get('/treatments', [ArticleController::class, 'index'])->name('treatments.index');
+    Route::get('/treatments/{slug}', [ArticleController::class, 'show'])->name('treatments.show');
 });

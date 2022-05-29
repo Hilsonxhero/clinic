@@ -187,7 +187,7 @@
                 </div>
             </div>
 
-            <a href="index.html" class="navbar-brand pe-3">
+            <a href="{{ route('page.landing') }}" class="navbar-brand pe-3">
                 <img src="{{ '/storage/' . $logo }}" width="140" alt="">
             </a>
 

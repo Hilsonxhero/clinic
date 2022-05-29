@@ -94,7 +94,8 @@ body {
 }
 
 .bg-gray-light {
-    background-color: #c3cbdc;
-    background-image: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 90%);
+    background-color: rgb(244 244 245);
+
+
 
 }

@@ -46,8 +46,8 @@
                         <div class="swiper-slide h-auto pb-3">
                             <article class="card h-100 flex flex-col border-0 shadow-sm mx-2">
                                 <div class="position-relative article-cover">
-                                    <a href="#" class="position-absolute top-0 start-0 w-100 h-100"
-                                        aria-label="Read more"></a>
+                                    <a href="{{ route('application.articles.show', $article->slug) }}"
+                                        class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
 
                                     <img src="{{ $article->banner }}" class="card-img-top" alt="Image">
                                 </div>
@@ -58,7 +58,8 @@
                                         <span class="fs-sm text-muted">{{ $article->created_date }}</span>
                                     </div>
                                     <h3 class="h5 mb-0 article-title">
-                                        <a href="#">{{ $article->title }}</a>
+                                        <a
+                                            href="{{ route('application.articles.show', $article->slug) }}">{{ $article->title }}</a>
                                     </h3>
                                     <p class="text-justify mt-3 ">
                                         {{ truncate($article->description, 90) }}
