@@ -91,7 +91,7 @@ body {
     /* text-align: right !important; */
     margin: 0;
     /* font-family: var(--bs-body-font-family); */
-    font-family: YekanBakh, sans-serif;
+    font-family: YekanBakh;
     text-align: right;
     font-size: var(--bs-body-font-size);
     font-weight: var(--bs-body-font-weight);

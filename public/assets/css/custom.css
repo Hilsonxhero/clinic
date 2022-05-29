@@ -64,3 +64,37 @@
 body {
     padding-top: 4rem;
 }
+
+.navbar-nav .nav-link {
+    padding-right: unset !important;
+    padding-left: 0.875rem;
+}
+
+.article-module__cover {
+    height: 12rem;
+    border-radius: 1rem;
+}
+
+
+@media (min-width : 991px) {
+    .article-module__cover {
+        height: 450px;
+    }
+
+}
+
+.object-cover {
+    object-fit: cover;
+}
+
+.article-module__body {
+    line-height: 2;
+    text-align: justify;
+
+}
+
+.bg-gray-light {
+    background-color: #c3cbdc;
+    background-image: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 90%);
+
+}

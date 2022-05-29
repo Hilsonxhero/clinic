@@ -36,6 +36,10 @@
                         </li>
 
                         <li class="nav-item">
+                            <a href="{{ route('application.articles.index') }}" class="nav-link">مقالات</a>
+                        </li>
+
+                        <li class="nav-item">
                             <a href="{{ route('application.page.contacts') }}" class="nav-link">ارتباط با ما</a>
                         </li>
 
