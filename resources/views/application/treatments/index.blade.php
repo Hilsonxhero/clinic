@@ -17,15 +17,16 @@
 
         <!-- Page title + Layout switcher -->
         <div class="d-flex align-items-center justify-content-between mb-4 pb-1 pb-md-3">
-            <h1 class="mb-0">مقالات</h1>
+            <h1 class="mb-0">روش های درمان</h1>
 
         </div>
 
         <div class="row">
             <div class="col-xl-9 col-lg-8">
 
-                <div id="js-articles-items">
-                    <x-article.article-item :articles="$articles"></x-article.article-item>
+
+                <div id="js-treatments-items">
+                    <x-treatment.treatment-item :treatments="$treatments"></x-treatment.treatment-item>
                 </div>
 
 
@@ -140,9 +141,9 @@
                         <div class="card card-body border-0 position-relative mb-4">
                             <span class="position-absolute top-0 start-0 w-100 h-100 bg-gray-light rounded-3"></span>
                             <div class="position-relative zindex-2">
-                                <h3 class="h5">مقاله های پر بازدید</h3>
+                                <h3 class="h5">روش های درمان پر بازدید</h3>
                                 <ul class="list-unstyled p-0 mb-0">
-                                    @foreach ($popular_articles as $popular_article)
+                                    @foreach ($popular_treatments as $popular_article)
                                         <li class="border-bottom pb-3 ">
                                             <h4 class="h6  article-title ">
                                                 <a href="#" class="">{{ $popular_article->title }}</a>
@@ -226,7 +227,7 @@
                     show_more.classList.add("d-none")
                     moreData = false
                 }
-                document.getElementById("js-articles-items").insertAdjacentHTML('beforeend', data.html)
+                document.getElementById("js-treatments-items").insertAdjacentHTML('beforeend', data.html)
 
             }).catch(() => {
 

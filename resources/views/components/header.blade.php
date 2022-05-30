@@ -32,12 +32,18 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ route('application.page.about') }}" class="nav-link">درباره ما</a>
+                            <a href="{{ route('application.articles.index') }}" class="nav-link">مقالات</a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ route('application.articles.index') }}" class="nav-link">مقالات</a>
+                            <a href="{{ route('application.treatments.index') }}" class="nav-link">روش های
+                                درمان</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a href="{{ route('application.page.about') }}" class="nav-link">درباره ما</a>
+                        </li>
+
 
                         <li class="nav-item">
                             <a href="{{ route('application.page.contacts') }}" class="nav-link">ارتباط با ما</a>

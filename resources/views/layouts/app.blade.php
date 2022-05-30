@@ -35,6 +35,8 @@
     <!-- Main Theme Styles + Bootstrap -->
     <link rel="stylesheet" media="screen" href="{{ asset('assets/css/theme.min.css') }}">
 
+    <link rel="stylesheet" media="screen" href="{{ asset('assets/plugins/sweetalert/sweetalert.min.css') }}">
+
     <link rel="stylesheet" media="screen" href="{{ asset('assets/css/custom.css') }}">
 
     <!-- Page loading styles -->
@@ -165,6 +167,8 @@
 
         <x-header></x-header>
         @yield('content')
+
+
     </main>
 
 
@@ -187,9 +191,11 @@
     <script src="{{asset('assets/vendor/lightgallery/plugins/fullscreen/lg-fullscreen.min.js')}}"></script>
     <script src="{{asset('assets/vendor/lightgallery/plugins/zoom/lg-zoom.min.js')}}"></script>
     <script src="{{asset('assets/vendor/lightgallery/plugins/video/lg-video.min.js')}}"></script> --}}
-
+    <script src="{{ asset('assets/plugins/sweetalert/sweetalert.min.js') }}"></script>
     <!-- Main Theme Script -->
     <script src="{{ asset('assets/js/theme.min.js') }}"></script>
+
+    <x-notification.toast />
 
     @yield('js')
 </body>

@@ -1,70 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-    <!-- Breadcrumb -->
-    {{-- <nav class="container pt-4 mt-lg-3" aria-label="breadcrumb">
-        <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item">
-                <a href="index.html"><i class="bx bx-home-alt fs-lg me-1"></i>Home</a>
-            </li>
-            <li class="breadcrumb-item">
-                <a href="blog-list-with-sidebar.html">Blog</a>
-            </li>
-            <li class="breadcrumb-item active" aria-current="page">Single Post</li>
-        </ol>
-    </nav> --}}
-
-
-    <!-- Post title + Meta  -->
-    {{-- <section class="container mt-4 pt-lg-2 pb-3">
-        <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3">
-            <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
-                <div class="fs-xs border-end pe-3 me-3 mb-2">
-                    <span class="badge bg-faded-primary text-primary fs-base">Technology</span>
-                </div>
-                <div class="fs-sm border-end pe-3 me-3 mb-2">12 hours ago</div>
-                <div class="d-flex mb-2">
-                    <div class="d-flex align-items-center me-3">
-                        <i class="bx bx-like fs-base me-1"></i>
-                        <span class="fs-sm">8</span>
-                    </div>
-                    <div class="d-flex align-items-center me-3">
-                        <i class="bx bx-comment fs-base me-1"></i>
-                        <span class="fs-sm">4</span>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <i class="bx bx-share-alt fs-base me-1"></i>
-                        <span class="fs-sm">2</span>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex align-items-center position-relative ps-md-3 pe-lg-5 mb-2">
-                <img src="assets/img/avatar/39.jpg" class="rounded-circle" width="60" alt="Avatar">
-                <div class="ps-3">
-                    <h6 class="mb-1">Author</h6>
-                    <a href="#" class="fw-semibold stretched-link">Albert Flores</a>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-
-
-
-
-    <!-- Post content + Sharing -->
     <section class="container mb-5 pt-4 pb-2 py-mg-4">
         <div class="row gy-4">
-
-            <!-- Content -->
             <div class="col-lg-8">
-
                 <div>
                     <div class="rounded-5 overflow-hidden article-module__cover mb-4">
-                        <img class="w-100 h-100 object-cover" src="{{ $article->banner }}" alt="">
+                        <img class="w-100 h-100 object-cover" src="{{ $treatment->banner }}" alt="">
                     </div>
-                    <h1>{{ $article->title }}</h1>
+                    <h1>{{ $treatment->title }}</h1>
                     <div class="article-module__body">
-                        {!! $article->body !!}
+                        {!! $treatment->body !!}
                     </div>
                 </div>
                 <!-- Tags -->
@@ -72,7 +18,7 @@
                 <div class="d-flex flex-sm-row flex-column pt-2">
                     {{-- <h6 class="mt-sm-1 mb-sm-2 mb-3 me-2 text-nowrap">Related Tags:</h6> --}}
                     <div>
-                        @foreach ($article->tags_values as $tag)
+                        @foreach ($treatment->tags_values as $tag)
                             <a href="#" class="btn btn-sm btn-outline-secondary me-2 mb-2">
                                 {{ $tag }}
                             </a>
@@ -104,12 +50,12 @@
                     <div class="card card-body  border-0 position-relative mb-4">
                         <span class="position-absolute top-0 start-0 w-100 h-100 bg-gray-light  rounded-3"></span>
                         <div class="position-relative zindex-2">
-                            <h3 class="h5">مقاله های اخیر</h3>
+                            <h3 class="h5">روش های درمان اخیر</h3>
                             <ul class="list-unstyled p-0 mb-0">
-                                @foreach ($latest_articles as $latest_article)
+                                @foreach ($latest_treatments as $latest_treatment)
                                     <li class="border-bottom pb-3 ">
-                                        <h4 class="h6  article-title ">
-                                            <a href="#" class="">{{ $latest_article->title }}</a>
+                                        <h4 class="h6  treatment-title ">
+                                            <a href="#" class="">{{ $latest_treatment->title }}</a>
                                         </h4>
                                     </li>
                                 @endforeach
@@ -311,55 +257,55 @@
 
     <section class="container mb-5 pt-md-4">
         <div class="d-flex flex-sm-row flex-column align-items-center justify-content-between mb-4 pb-1 pb-md-3">
-            <h2 class="h1 mb-sm-0">مقالات مرتبط</h2>
-            <a href="{{ route('application.articles.index') }}" class="btn btn-lg btn-outline-primary">
-                مقالات
+            <h2 class="h1 mb-sm-0">روش های درمان مرتبط</h2>
+            <a href="{{ route('application.treatments.index') }}" class="btn btn-lg btn-outline-primary">
+                روش های درمان
                 <i class="bx bx-left-arrow-alt me-1  lh-1 lead"></i>
             </a>
         </div>
 
-        <div class="swiper mx-n2"
-            data-swiper-options='{
-                                                                                                                                                                                                                                              "slidesPerView": 1,
-                                                                                                                                                                                                                                              "spaceBetween": 8,
-                                                                                                                                                                                                                                              "pagination": {
-                                                                                                                                                                                                                                                "el": ".swiper-pagination",
-                                                                                                                                                                                                                                                "clickable": true
-                                                                                                                                                                                                                                              },
-                                                                                                                                                                                                                                              "breakpoints": {
-                                                                                                                                                                                                                                                "500": {
-                                                                                                                                                                                                                                                  "slidesPerView": 2
-                                                                                                                                                                                                                                                },
-                                                                                                                                                                                                                                                "1000": {
-                                                                                                                                                                                                                                                  "slidesPerView": 3
-                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                                            }'>
+        <div class="swiper mx-n2" data-swiper-options='{
+                                             "slidesPerView": 1,
+                                             "spaceBetween": 8,
+                                             "pagination": {
+                                               "el": ".swiper-pagination",
+                                               "clickable": true
+                                             },
+                                             "breakpoints": {
+                                               "500": {
+                                                 "slidesPerView": 2
+                                               },
+                                               "1000": {
+                                                 "slidesPerView": 3
+                                               }
+                                             }
+                                        }'>
             <div class="swiper-wrapper">
 
-                @foreach ($related_articles as $related_article)
+                @foreach ($related_treatments as $related_treatment)
                     <div class="swiper-slide h-auto pb-3">
                         <article class="card border-0 shadow-sm h-100 mx-2">
                             <div class="position-relative article-cover">
-                                <a href="{{ route('application.articles.show', $related_article->slug) }}"
+                                <a href="{{ route('application.treatments.show', $related_treatment->slug) }}"
                                     class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
 
-                                <img src="  {{ $related_article->banner }}" class="card-img-top" alt="Image">
+                                <img src="  {{ $related_treatment->banner }}" class="card-img-top object-cover"
+                                    alt="Image">
                             </div>
                             <div class="card-body pb-4">
                                 <div class="d-flex align-items-center justify-content-between mb-3">
                                     <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none">
-                                        {{ $related_article->category->title }}</a>
-                                    <span class="fs-sm text-muted"> {{ $related_article->created }}</span>
+                                        {{ $related_treatment->category->title }}</a>
+                                    <span class="fs-sm text-muted"> {{ $related_treatment->created }}</span>
                                 </div>
                                 <h3 class="h5 mb-0">
-                                    <a href="{{ route('application.articles.show', $related_article->slug) }}">
-                                        {{ $related_article->title }}
+                                    <a href="{{ route('application.treatments.show', $related_treatment->slug) }}">
+                                        {{ $related_treatment->title }}
                                     </a>
                                 </h3>
                             </div>
 
-                        </article>
+                            </treatment>
                     </div>
                 @endforeach
 

@@ -73,7 +73,9 @@
 
         <!-- Contact form -->
         <div class="bg-secondary rounded-3 py-5 px-3 px-sm-0 mb-xl-4">
-            <form class="needs-validation row justify-content-center py-lg-3 py-xl-4" novalidate>
+            <form action="{{ route('application.page.contacts.store') }}" method="POST"
+                class=" row justify-content-center py-lg-3 py-xl-4">
+                @csrf
                 <div class="col-xl-8 col-lg-9 col-md-10 col-sm-11">
                     <h2 class="h1 pb-lg-1 mb-4">تماس با ما</h2>
                     <p class="fs-lg text-muted pb-lg-1 mb-4">
@@ -82,17 +84,17 @@
                     <div class="row">
                         <div class="col-sm-6 mb-4">
                             <label for="name" class="form-label fs-base">نام</label>
-                            <input type="text" id="name" class="form-control form-control-lg" required>
+                            <input type="text" name="name" id="name" class="form-control form-control-lg" required>
                             <div class="invalid-feedback">لطفا نام خود را وارد کنید</div>
                         </div>
                         <div class="col-sm-6 mb-4">
                             <label for="email" class="form-label fs-base">ایمیل</label>
-                            <input type="email" id="email" class="form-control form-control-lg" required>
+                            <input type="email" name="email" id="email" class="form-control form-control-lg" required>
                             <div class="invalid-feedback">لطفا ایمیل خود را وارد کنید</div>
                         </div>
                         <div class="col-12 mb-4">
                             <label for="message" class="form-label fs-base">متن پیام</label>
-                            <textarea id="message" class="form-control form-control-lg" rows="4" required></textarea>
+                            <textarea id="message" name="content" class="form-control form-control-lg" rows="4" required></textarea>
                             <div class="invalid-feedback">لطفا متن پیام خود را بنویسید</div>
                         </div>
                     </div>
