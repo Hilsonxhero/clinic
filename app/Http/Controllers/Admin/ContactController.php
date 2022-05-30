@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Category;
-use App\Models\Treatment;
 use Illuminate\Http\Request;
 use App\Services\MediaFileService;
 use App\Http\Controllers\Controller;
+use App\Models\Contact;
 
-class TreatmentMethodController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +16,8 @@ class TreatmentMethodController extends Controller
      */
     public function index()
     {
-        $treatments = Treatment::query()->get();
-        return view('panel.treatments.index', compact('treatments'));
+        $contacts = Contact::query()->get();
+        return view('panel.contacts.index', compact('contacts'));
     }
 
     /**
@@ -28,9 +27,7 @@ class TreatmentMethodController extends Controller
      */
     public function create()
     {
-        $categories = Category::query()->where('status', Category::PUBLISHED_STATUS)->get();
-
-        return view('panel.treatments.create', compact('categories'));
+        return view('panel.contacts.create');
     }
 
     /**
@@ -41,37 +38,26 @@ class TreatmentMethodController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $request->validate([
-            'title' => ['required', 'min:3', 'string'],
-            'body' => ['required'],
-            'description' => ['nullable'],
-            'category_id' => ['nullable', 'exists:categories,id'],
-            'banner' => ['nullable', 'file'],
-            'meta_title' => ['required'],
-            'meta_description' => ['required'],
-            'meta_keywords' => ['required'],
+            'title' => ['required'],
+            'name' => ['required'],
+            'email' => ['required'],
+            'content' => ['required'],
+            'answer' => ['required'],
         ]);
 
-        if ($request->file('banner')) $request->merge(['media_id' => MediaFileService::publicUpload($request->file('banner'))->id]);
+        $contact = Contact::query()->where('id', $request->id)->first();
 
-        $article = Treatment::query()->create([
-            'title' => $request->title,
-            'description' => $request->description,
-            'body' => $request->body,
-            'media_id' => $request->media_id,
-            'category_id' => $request->category_id,
-            'tags' => json_decode($request->tags)
+
+        // if ($request->file('banner')) $request->merge(['media_id' => MediaFileService::publicUpload($request->file('banner'))->id]);
+
+        $contact->update([
+            'answer' => $request->answer,
+            'is_read' => 1
         ]);
-
-        $article->meta()->create([
-            "title" => $request->meta_title,
-            "description" => $request->meta_description,
-            "keywords" => json_decode($request->meta_keywords),
-        ]);
-
-
-        return redirect()->route('panel.treatments.index')
-            ->with('success', 'ایجاد روش درمان با موفقیت انجام شد');
+        return redirect()->route('panel.contacts.index')
+            ->with('success', '   ارسال پاسخ با موفقیت انجام شد');
     }
 
     /**
@@ -93,9 +79,8 @@ class TreatmentMethodController extends Controller
      */
     public function edit($id)
     {
-        $categories = Category::query()->where('status', Category::PUBLISHED_STATUS)->get();
-        $treatment = Treatment::query()->where('id', $id)->first();
-        return view('panel.treatments.edit', compact('categories', 'treatment'));
+        $treatment = Contact::query()->where('id', $id)->first();
+        return view('panel.contacts.edit', compact('treatment'));
     }
 
     /**
@@ -118,7 +103,7 @@ class TreatmentMethodController extends Controller
             'meta_keywords' => ['required'],
         ]);
 
-        $article = Treatment::query()->where('id', $id)->first();
+        $article = Contact::query()->where('id', $id)->first();
 
 
         if ($request->file('banner')) {
@@ -146,7 +131,7 @@ class TreatmentMethodController extends Controller
         ]);
 
 
-        return redirect()->route('panel.treatments.index')
+        return redirect()->route('panel.contacts.index')
             ->with('success', 'ویرایش روش درمان با موفقیت انجام شد');
     }
 
@@ -158,7 +143,7 @@ class TreatmentMethodController extends Controller
      */
     public function destroy($id)
     {
-        $item = Treatment::where('id', $id)->first();
+        $item = Contact::where('id', $id)->first();
         $item->delete();
         if ($item->media) $item->media->delete();
 

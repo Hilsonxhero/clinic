@@ -82,6 +82,11 @@
                         لطفاً پیش از ارسال ایمیل یا تماس تلفنی، ابتداپرسش‌‌های متداولرا مشاهده کنید.
                     </p>
                     <div class="row">
+                        <div class="col-sm-12 mb-4">
+                            <label for="title" class="form-label fs-base">عنوان</label>
+                            <input type="text" name="title" id="title" class="form-control form-control-lg" required>
+                            <div class="invalid-feedback">لطفا عنوان پیام را وارد کنید</div>
+                        </div>
                         <div class="col-sm-6 mb-4">
                             <label for="name" class="form-label fs-base">نام</label>
                             <input type="text" name="name" id="name" class="form-control form-control-lg" required>

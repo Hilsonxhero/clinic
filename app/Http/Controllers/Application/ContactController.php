@@ -12,12 +12,14 @@ class ContactController extends Controller
     {
 
         $request->validate([
+            'title' => ['required'],
             'name' => ['required'],
             'email' => ['required'],
             'content' => ['required'],
         ]);
 
         Contact::query()->create([
+            'title' => $request->title,
             'name' => $request->name,
             'email' => $request->email,
             'content' => $request->content,

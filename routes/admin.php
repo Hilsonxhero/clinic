@@ -37,8 +37,11 @@ Route::prefix('panel/admin')->middleware('auth')->name('panel.')->group(function
     // questions
     Route::resource('questions', App\Http\Controllers\Admin\QuestionController::class);
 
-    // questions
+    // treatments
     Route::resource('treatments', App\Http\Controllers\Admin\TreatmentMethodController::class);
+
+    // contacts
+    Route::resource('contacts', App\Http\Controllers\Admin\ContactController::class);
 
 
 
@@ -58,6 +61,14 @@ Route::prefix('panel/admin')->middleware('auth')->name('panel.')->group(function
     // setting
     Route::get('page/setting', [App\Http\Controllers\Admin\SettingController::class, 'index'])
         ->name('page.setting.index');
+
     Route::post('page/setting', [App\Http\Controllers\Admin\SettingController::class, 'update'])
         ->name('page.setting.update');
+
+    // profile
+    Route::get('profile', [App\Http\Controllers\Admin\ProfileController::class, 'index'])
+        ->name('profile.index');
+
+    Route::post('profile', [App\Http\Controllers\Admin\ProfileController::class, 'update'])
+        ->name('profile.update');
 });

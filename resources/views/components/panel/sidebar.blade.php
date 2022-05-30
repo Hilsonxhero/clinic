@@ -389,22 +389,7 @@
                             </div>
 
 
-                            <div class="menu-item">
-                                <a class="menu-link" href="../../demo1/dist/pages/contact.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">ارتباط با ما</span>
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link" href="../../demo1/dist/pages/team.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">تیم کادر درمان</span>
-                                </a>
-                            </div>
+
 
                         </div>
                     </div>
@@ -441,10 +426,9 @@
 
 
                     <div class="menu-item">
-                        <a class="menu-link"
-                            href="https://preview.keenthemes.com/metronic8/demo1/layout-builder.html">
+                        <a class="menu-link" href="{{ route('panel.contacts.index') }}">
                             <span class="menu-icon">
-                                <!--begin::Svg Icon | path: icons/duotune/general/gen019.svg-->
+
                                 <span class="svg-icon svg-icon-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         fill="none">
@@ -543,8 +527,7 @@
                     </div>
 
                     <div class="menu-item">
-                        <a class="menu-link"
-                            href="https://preview.keenthemes.com/metronic8/demo1/layout-builder.html">
+                        <a class="menu-link" href="{{ route('panel.profile.index') }}">
                             <span class="menu-icon">
                                 <!--begin::Svg Icon | path: icons/duotune/general/gen019.svg-->
                                 <span class="svg-icon svg-icon-2">
