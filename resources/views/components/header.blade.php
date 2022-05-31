@@ -4,7 +4,7 @@
 
             <div id="navbarNav" class="offcanvas offcanvas-start">
                 <div class="offcanvas-header border-bottom">
-                    <h5 class="offcanvas-title">Menu</h5>
+                    <h5 class="offcanvas-title">منو</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
@@ -184,18 +184,24 @@
 
                     </ul>
                 </div>
-                <div class="offcanvas-footer border-top">
-                    <a href="https://themes.getbootstrap.com/product/silicon-business-technology-template-ui-kit/"
-                        class="btn btn-primary w-100" target="_blank" rel="noopener">
-                        <i class="bx bx-cart fs-4 lh-1 me-1"></i>
-                        &nbsp;Buy now
-                    </a>
-                </div>
+
             </div>
 
-            <a href="{{ route('page.landing') }}" class="navbar-brand pe-3">
-                <img src="{{ '/storage/' . $logo }}" width="140" alt="">
-            </a>
+
+            <div class="d-flex align-items-center">
+                @auth
+                    <a href="{{ route('panel.dashboard') }}" class="btn btn-outline-info btn-icon rounded-circle"
+                        type="button">
+                        <i class="bx bx-user"></i>
+                    </a>
+                @endauth
+
+
+                <a href="{{ route('page.landing') }}" class="navbar-brand pe-3">
+                    <img src="{{ '/storage/' . $logo }}" width="140" alt="">
+                </a>
+            </div>
+
 
 
             <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav"

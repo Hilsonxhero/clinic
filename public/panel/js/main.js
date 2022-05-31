@@ -16,3 +16,9 @@ const on = (type, el, listener, all = !1) => {
         }
     }
 }
+
+let accordion = select(".menu-sub-accordion .menu-item .menu-link.active", true)
+accordion.forEach((item, index) => {
+    console.log("item", item.closest('div.menu-accordion').classList);
+    let parent = item.closest('div.menu-accordion').classList.add('here', 'show')
+})
