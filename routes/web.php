@@ -6,6 +6,7 @@ use App\Http\Controllers\Application\TreatmentController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
+use Shetabit\Visitor\Middlewares\LogVisits;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,14 +19,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [LandingController::class, 'landing'])->name('page.landing');
+
 
 Route::prefix('')->name('application.')->group(function () {
+    Route::get('/', [LandingController::class, 'landing'])->name('page.landing');
     Route::get('/about', [PageController::class, 'about'])->name('page.about');
-
     Route::get('/contacts', [PageController::class, 'contacts'])->name('page.contacts');
     Route::post('/contacts', [ContactController::class, 'store'])->name('page.contacts.store');
-
     Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
     Route::get('/articles/{slug}', [ArticleController::class, 'show'])->name('articles.show');
     Route::get('/treatments', [TreatmentController::class, 'index'])->name('treatments.index');

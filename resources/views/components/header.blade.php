@@ -11,7 +11,7 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 p-0">
 
                         <li class="nav-item">
-                            <a href="{{ route('page.landing') }}" class="nav-link">صفحه اصلی</a>
+                            <a href="{{ route('application.page.landing') }}" class="nav-link">صفحه اصلی</a>
                         </li>
 
                         <li class="nav-item dropdown">
@@ -197,8 +197,8 @@
                 @endauth
 
 
-                <a href="{{ route('page.landing') }}" class="navbar-brand pe-3">
-                    <img src="{{ '/storage/' . $logo }}" width="140" alt="">
+                <a href="{{ route('application.page.landing') }}" class="navbar-brand pe-3">
+                    <img src="{{ '/storage/' . $setting->logo }}" width="140" alt="">
                 </a>
             </div>
 

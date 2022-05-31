@@ -31,15 +31,12 @@ class ViewServiceProvider extends ServiceProvider
 
         View::composer('components.header', function ($view) {
             $services = Service::query()->where('status', Service::ACTIVE_STATUS)->get();
-            $logo = Setting::setting('logo');
-            // dd($logo);
-            $view->with(compact('services', 'logo'));
+            $view->with(compact('services'));
         });
 
 
         View::composer('*', function ($view) {
             $setting = Setting::getAll();
-            // dd($setting);
             $view->with(compact('setting'));
         });
     }

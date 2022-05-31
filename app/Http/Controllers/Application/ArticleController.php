@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Application;
 
-use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use App\Models\Article;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use CyrildeWit\EloquentViewable\Support\Period;
+use CyrildeWit\EloquentViewable\View;
 
 class ArticleController extends Controller
 {
@@ -28,10 +31,16 @@ class ArticleController extends Controller
         return view('application.articles.index', compact('articles', 'popular_articles'));
     }
 
-    public function show($slug)
+    public function show(Request $request, $slug)
     {
+
+
         try {
             $article = Article::query()->where('slug', $slug)->firstOrFail();
+            views($article)->cooldown(2)->record();
+            // $ss = views($article)
+            //     ->unique()
+            //     ->count();
             $related_articles = Article::query()->where('category_id', $article->category_id)->take(6)->orderByDesc('created_at')->get();
             $latest_articles = Article::query()->take(6)->orderByDesc('created_at')->get();
             return view('application.articles.show', compact('article', 'related_articles', 'latest_articles'));

@@ -94,7 +94,7 @@
             </div>
         </div>
 
-        <div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
+        {{-- <div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
             <a href="../../demo1/dist/documentation/getting-started.html" class="btn btn-custom btn-primary w-100"
                 data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss-="click"
                 title="200+ in-house components and 3rd-party plugins">
@@ -113,9 +113,7 @@
                 </span>
                 <!--end::Svg Icon-->
             </a>
-        </div>
+        </div> --}}
         <!--end::Footer-->
     </div>
 </div>
-
-

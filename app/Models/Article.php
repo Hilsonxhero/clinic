@@ -7,10 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use CyrildeWit\EloquentViewable\InteractsWithViews;
+use CyrildeWit\EloquentViewable\Contracts\Viewable;
 
-class Article extends Model
+class Article extends Model implements Viewable
 {
-    use HasFactory, SoftDeletes, Sluggable;
+    use HasFactory, SoftDeletes, Sluggable, InteractsWithViews;
 
     const PUBLISHED_STATUS = 'published';
     const UNPUBLISHED_STATUS = 'unpublished';
@@ -48,7 +50,6 @@ class Article extends Model
     public function getBannerAttribute()
     {
         if (!is_null($this->media)) return $this->media->thumb();
-
         return "";
     }
 
