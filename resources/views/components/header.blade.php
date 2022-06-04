@@ -1,4 +1,54 @@
 <div>
+    {{-- <header class="header navbar navbar-expand-lg navbar-light position-absolute navbar-sticky">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <img src="assets/img/logo.svg" width="47" alt="Silicon">
+                Silicon
+            </a>
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse4" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="d-flex d-lg-none order-lg-3">
+                <a href="tel:4055550128" class="nav-link px-2 ms-2">
+                    <i class="bx bx-mobile-alt fs-2"></i>
+                </a>
+                <a href="mailto:hello@example.com" class="nav-link px-2">
+                    <i class="bx bx-chat fs-2"></i>
+                </a>
+            </div>
+            <div class="d-none d-lg-flex order-lg-3">
+                <a href="tel:4055550128" class="d-flex align-items-center text-decoration-none ms-4">
+                    <i class="bx bx-mobile-alt fs-2 text-primary"></i>
+                    <div class="fs-sm text-nowrap pe-2">
+                        <h6 class="fs-sm mb-0">Call us</h6>
+                        <span class="text-nav">(405) 555-0128</span>
+                    </div>
+                </a>
+                <a href="mailto:hello@example.com" class="d-flex align-items-center text-decoration-none ms-4">
+                    <i class="bx bx-chat fs-2 text-primary"></i>
+                    <div class="fs-sm pe-2">
+                        <h6 class="fs-sm mb-0">Talk to us</h6>
+                        <span class="text-nav">hello@example.com</span>
+                    </div>
+                </a>
+            </div>
+            <nav id="navbarCollapse4" class="collapse navbar-collapse order-lg-2">
+                <hr class="d-lg-none mt-3 mb-2">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">About</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header> --}}
     <header class="header navbar navbar-expand-lg navbar-light position-absolute navbar-sticky">
         <div class="container px-3">
 
@@ -20,14 +70,7 @@
                                 @foreach ($services as $service)
                                     <li><a href="" class="dropdown-item text-start">{{ $service->title }}</a></li>
                                 @endforeach
-                                {{-- <li><a href="account-security.html" class="dropdown-item">Security</a></li>
-                                <li><a href="account-notifications.html" class="dropdown-item">Notifications</a></li>
-                                <li><a href="account-messages.html" class="dropdown-item">Messages</a></li>
-                                <li><a href="account-saved-items.html" class="dropdown-item">Saved Items</a></li>
-                                <li><a href="account-collections.html" class="dropdown-item">My Collections</a></li>
-                                <li><a href="account-payment.html" class="dropdown-item">Payment Details</a></li>
-                                <li><a href="account-signin.html" class="dropdown-item">Sign In</a></li>
-                                <li><a href="account-signup.html" class="dropdown-item">Sign Up</a></li> --}}
+
                             </ul>
                         </li>
 
@@ -189,12 +232,61 @@
 
 
             <div class="d-flex align-items-center">
-                @auth
+                {{-- @auth
                     <a href="{{ route('panel.dashboard') }}" class="btn btn-outline-info btn-icon rounded-circle"
                         type="button">
                         <i class="bx bx-user"></i>
                     </a>
+                @endauth --}}
+
+                <div class="d-none d-lg-flex ">
+                    <a href="tel:4055550128" class="d-flex align-items-center text-decoration-none ms-4">
+                        <i class="bx bx-mobile-alt fs-2 text-primary"></i>
+                        <div class="fs-sm text-nowrap pe-2">
+                            <h6 class="fs-sm mb-0">تماس با ما</h6>
+                            <span class="text-nav">{{ $setting->phone_1 }}</span>
+                        </div>
+                    </a>
+                    <a href="mailto:hello@example.com" class="d-flex align-items-center text-decoration-none ms-4">
+                        <i class="bx bx-chat fs-2 text-primary"></i>
+                        <div class="fs-sm pe-2">
+                            <h6 class="fs-sm mb-0">ارتباط با ما</h6>
+                            <span class="text-nav">{{ $setting->email }}</span>
+                        </div>
+                    </a>
+                </div>
+
+                @auth
+                    <div class="dropdown  me-4">
+                        <a href="#" class="d-flex nav-link p-0" data-bs-toggle="dropdown">
+                            <img src="{{ asset('panel/media/svg/avatars/blank.svg') }}" class="rounded-circle"
+                                alt="Avatar" width="48">
+                            <div class="d-none d-sm-block pe-2">
+                                <div class="fs-xs lh-1 opacity-60">{{ auth()->user()->email }}</div>
+                                <div class="fs-sm dropdown-toggle">{{ auth()->user()->username }}</div>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end my-1" style="width: 14rem;">
+                            <li>
+                                <a href="{{ route('panel.dashboard') }}"
+                                    class="dropdown-item d-flex align-items-center">
+                                    <i class="bx bxs-dashboard fs-base opacity-60 ms-2"></i>
+                                    پنل مدیریت
+                                </a>
+                            </li>
+
+                            <li class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <i class="bx bx-log-out fs-base opacity-60 ms-2"></i>
+                                    خروج از حساب کاربری
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 @endauth
+
+
 
 
                 <a href="{{ route('application.page.landing') }}" class="navbar-brand pe-3">
@@ -208,11 +300,6 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            {{-- <a href="https://themes.getbootstrap.com/product/silicon-business-technology-template-ui-kit/"
-                class="btn btn-primary btn-sm fs-sm rounded d-none d-lg-inline-flex" target="_blank" rel="noopener">
-                <i class="bx bx-cart fs-5 lh-1 me-1"></i>
-                &nbsp;Buy now
-            </a> --}}
         </div>
     </header>
 </div>

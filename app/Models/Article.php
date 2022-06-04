@@ -8,11 +8,10 @@ use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use CyrildeWit\EloquentViewable\InteractsWithViews;
-use CyrildeWit\EloquentViewable\Contracts\Viewable;
 
-class Article extends Model implements Viewable
+class Article extends Model
 {
-    use HasFactory, SoftDeletes, Sluggable, InteractsWithViews;
+    use HasFactory, SoftDeletes, Sluggable;
 
     const PUBLISHED_STATUS = 'published';
     const UNPUBLISHED_STATUS = 'unpublished';

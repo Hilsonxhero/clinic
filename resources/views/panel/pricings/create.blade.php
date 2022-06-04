@@ -36,7 +36,7 @@
                         </x-input-group>
 
                         <x-input-group class="col-md-6" label="قیمت ">
-                            <x-input name="price" type="number" ></x-input>
+                            <x-input name="price" type="number"></x-input>
                         </x-input-group>
 
                         <x-input-group class="col-md-6" label="ناحیه یا قسمت ">
@@ -64,7 +64,7 @@
                     class="btn btn-light me-5">لغو</a>
                 <!--end::Button-->
                 <!--begin::Button-->
-                <button type="submit"  class="btn btn-primary">
+                <button type="submit" class="btn btn-primary">
                     <span class="indicator-label">ذخیره تغییرات</span>
                     <span class="indicator-progress">Please wait...
                         <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>

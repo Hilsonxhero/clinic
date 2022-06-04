@@ -3,7 +3,7 @@
 
 @section('breadcrumb')
     <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">
-        ویرایش دسته بندی
+        ویرایش مقاله
         <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
     </h1>
 @endsection
@@ -94,7 +94,8 @@
                     </div>
 
                     <x-input-group class="" label="کلمات کلیدی ">
-                        <x-tag-input class="js-keywords" name="tags" placeholder="کلمات کلیدی" value="{{$article->tags_data}}"></x-tag-input>
+                        <x-tag-input class="js-keywords" name="tags" placeholder="کلمات کلیدی"
+                            value="{{ $article->tags_data }}"></x-tag-input>
                     </x-input-group>
 
                     <div class="text-muted fs-7">

@@ -1,15 +1,15 @@
 @extends('layouts.panel')
-
-
 @section('breadcrumb')
     <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">
-        ایجاد تعرفه
+        ویرایش تعرفه
         <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
     </h1>
 @endsection
 
+
+
 @section('content')
-    <form id="kt_ecommerce_add_category_form" action="{{ route('panel.pricings.update',$pricing->id) }}" method="post"
+    <form id="kt_ecommerce_add_category_form" action="{{ route('panel.pricings.update', $pricing->id) }}" method="post"
         class="form d-flex flex-column flex-lg-row" enctype="multipart/form-data">
         @csrf
         @method('put')

@@ -3,7 +3,7 @@
 
 @section('breadcrumb')
     <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">
-        ویرایش سوال
+        ویرایش سوال متداول
         <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
     </h1>
 @endsection

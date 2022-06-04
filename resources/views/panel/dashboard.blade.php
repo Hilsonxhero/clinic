@@ -1,8 +1,15 @@
 @extends('layouts.panel')
 
+@section('breadcrumb')
+    <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">
+        داشبورد
+        <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
+    </h1>
+@endsection
+
 @section('content')
     <!--begin::Row-->
-    <div class="row gy-5 g-xl-8">
+    <div class="row gy-5 g-xl-8 d-none">
         <!--begin::Col-->
         <div class="col-xl-4">
             <!--begin::Mixed Widget 2-->
@@ -519,7 +526,7 @@
     </div>
     <!--end::Row-->
     <!--begin::Row-->
-    <div class="row gy-5 g-xl-8">
+    <div class="row gy-5 g-xl-8 d-none">
         <!--begin::Col-->
         <div class="col-xl-4">
             <!--begin::List Widget 3-->
@@ -1273,7 +1280,7 @@
     </div>
     <!--end::Row-->
     <!--begin::Row-->
-    <div class="row gy-5 g-xl-8">
+    <div class="row gy-5 g-xl-8 d-none">
         <!--begin::Col-->
         <div class="col-xl-4">
             <!--begin::List Widget 2-->
@@ -1940,7 +1947,7 @@
     </div>
     <!--end::Row-->
     <!--begin::Row-->
-    <div class="row g-5 g-xl-8">
+    <div class="row g-5 g-xl-8 d-none">
         <!--begin::Col-->
         <div class="col-xl-4">
             <!--begin::Mixed Widget 5-->

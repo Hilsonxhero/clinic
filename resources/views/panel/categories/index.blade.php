@@ -1,5 +1,12 @@
 @extends('layouts.panel')
 
+@section('breadcrumb')
+    <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">
+        دسته بندی ها
+        <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
+    </h1>
+@endsection
+
 @section('content')
     <div class="card card-flush">
         <!--begin::Card header-->
@@ -116,7 +123,8 @@
                             <td>
                                 <div class="d-flex justify-content-end flex-shrink-0">
 
-                                    <a href="{{route('panel.categories.edit',$category->id)}}" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                    <a href="{{ route('panel.categories.edit', $category->id) }}"
+                                        class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                         <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                         <span class="svg-icon svg-icon-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -191,7 +199,7 @@
                     ).forEach((t) => {
                         t.addEventListener("click", function(t) {
 
-                           let id = $(t.target).closest("a").data('id')
+                            let id = $(t.target).closest("a").data('id')
 
                             console.log("id", id);
 

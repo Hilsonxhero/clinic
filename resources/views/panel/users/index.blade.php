@@ -1,4 +1,10 @@
 @extends('layouts.panel')
+@section('breadcrumb')
+    <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">
+        کاربران
+        <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
+    </h1>
+@endsection
 
 @section('content')
     <div class="card card-flush">
@@ -89,7 +95,7 @@
                                 </div>
                             </td>
                             <td>
-                                <div class="badge badge-light-primary">{{$user->phone}}</div>
+                                <div class="badge badge-light-primary">{{ $user->phone }}</div>
                             </td>
                             <td>
                                 @switch($user->status)
@@ -106,7 +112,7 @@
                             </td>
 
                             <td>
-                                <div class="badge badge-light-primary">{{$user->created}}</div>
+                                <div class="badge badge-light-primary">{{ $user->created }}</div>
                             </td>
 
                             <td>
@@ -136,9 +142,8 @@
                                     </form>
 
 
-                                    <a data-id="{{ json_encode($user->id) }}"
-                                        data-kt-ecommerce-user-filter="delete_row" href="#"
-                                        class="btn btn-icon btn-bg-light btn-active-color-danger btn-sm">
+                                    <a data-id="{{ json_encode($user->id) }}" data-kt-ecommerce-user-filter="delete_row"
+                                        href="#" class="btn btn-icon btn-bg-light btn-active-color-danger btn-sm">
                                         <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                         <span class="svg-icon svg-icon-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
