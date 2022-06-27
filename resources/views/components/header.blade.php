@@ -68,7 +68,8 @@
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">خدمات ما</a>
                             <ul class="dropdown-menu">
                                 @foreach ($services as $service)
-                                    <li><a href="" class="dropdown-item text-start">{{ $service->title }}</a></li>
+                                    <li><a href="" class="dropdown-item text-start">{{ $service->title }}</a>
+                                    </li>
                                 @endforeach
 
                             </ul>
@@ -170,11 +171,13 @@
                                             </li>
                                             <li><a href="portfolio-slider.html" class="dropdown-item py-1">Slider
                                                     View</a></li>
-                                            <li><a href="portfolio-courses.html" class="dropdown-item py-1">Courses</a>
+                                            <li><a href="portfolio-courses.html"
+                                                    class="dropdown-item py-1">Courses</a>
                                             </li>
                                             <li><a href="portfolio-single-project.html"
                                                     class="dropdown-item py-1">Single Project</a></li>
-                                            <li><a href="portfolio-single-course.html" class="dropdown-item py-1">Single
+                                            <li><a href="portfolio-single-course.html"
+                                                    class="dropdown-item py-1">Single
                                                     Course</a></li>
                                         </ul>
                                         <h6 class="px-3 mb-2">Services</h6>
@@ -192,7 +195,8 @@
                                     <div class="mega-dropdown-column">
                                         <h6 class="px-3 mb-2">Pricing</h6>
                                         <ul class="list-unstyled mb-3">
-                                            <li><a href="pricing.html" class="dropdown-item py-1">Pricing Page</a></li>
+                                            <li><a href="pricing.html" class="dropdown-item py-1">Pricing Page</a>
+                                            </li>
                                         </ul>
                                         <h6 class="px-3 mb-2">Contacts</h6>
                                         <ul class="list-unstyled mb-3">
@@ -203,8 +207,10 @@
                                         </ul>
                                         <h6 class="px-3 mb-2">Specialty</h6>
                                         <ul class="list-unstyled">
-                                            <li><a href="404-v1.html" class="dropdown-item py-1">404 Error v.1</a></li>
-                                            <li><a href="404-v2.html" class="dropdown-item py-1">404 Error v.2</a></li>
+                                            <li><a href="404-v1.html" class="dropdown-item py-1">404 Error v.1</a>
+                                            </li>
+                                            <li><a href="404-v2.html" class="dropdown-item py-1">404 Error v.2</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -242,18 +248,19 @@
                 <div class="d-none d-lg-flex ">
                     <a href="tel:4055550128" class="d-flex align-items-center text-decoration-none ms-4">
                         <i class="bx bx-mobile-alt fs-2 text-primary"></i>
-                        <div class="fs-sm text-nowrap pe-2">
-                            <h6 class="fs-sm mb-0">تماس با ما</h6>
+                        <div class="fs-sm text-nowrap pe-2 d-flex flex-col">
+                            {{-- <h6 class="fs-sm mb-0">تماس با ما</h6> --}}
                             <span class="text-nav">{{ $setting->phone_1 }}</span>
+                            <span class="text-nav">{{ $setting->phone_2 }}</span>
                         </div>
                     </a>
-                    <a href="mailto:hello@example.com" class="d-flex align-items-center text-decoration-none ms-4">
+                    {{-- <a href="mailto:hello@example.com" class="d-flex align-items-center text-decoration-none ms-4">
                         <i class="bx bx-chat fs-2 text-primary"></i>
                         <div class="fs-sm pe-2">
                             <h6 class="fs-sm mb-0">ارتباط با ما</h6>
                             <span class="text-nav">{{ $setting->email }}</span>
                         </div>
-                    </a>
+                    </a> --}}
                 </div>
 
                 @auth

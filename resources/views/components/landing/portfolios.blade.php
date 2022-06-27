@@ -1,7 +1,7 @@
-@props(['articles'])
+@props(['portfolios'])
 
 <section class="container py-5 mb-1 mb-md-4 mb-lg-5">
-    <h2 class="h1 text-center pt-1 pb-4 mb-1 mb-lg-3">مقالات</h2>
+    <h2 class="h1 text-center pt-1 pb-4 mb-1 mb-lg-3">نمونه کار ها</h2>
     <div class="position-relative px-xl-5">
 
         <!-- Slider prev/next buttons -->
@@ -20,7 +20,7 @@
                 data-swiper-options='{
                                                                                   "slidesPerView": 1,
 
-                                                                                  "loop": true,
+                                                                                  "loop": false,
                                                                                   "pagination": {
                                                                                     "el": ".swiper-pagination",
                                                                                     "clickable": true
@@ -40,28 +40,29 @@
                                                                                 }'>
                 <div class="swiper-wrapper">
 
-                    @foreach ($articles as $article)
+                    @foreach ($portfolios as $portfolio)
                         <div class="swiper-slide h-auto pb-3">
                             <article class="card h-100 flex flex-col border-0 shadow-sm mx-2">
                                 <div class="position-relative article-cover">
-                                    <a href="{{ route('application.articles.show', $article->slug) }}"
+                                    <a href="{{ route('application.portfolios.show', $portfolio->slug) }}"
                                         class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
 
-                                    <img src="{{ $article->banner }}" class="card-img-top" alt="Image">
+                                    <img src="{{ $portfolio->file }}" class="card-img-top object-cover"
+                                        alt="Image">
                                 </div>
                                 <div class="card-body pb-4 article-content">
                                     <div class="d-flex align-items-center justify-content-between mb-3">
                                         <a href="#"
-                                            class="badge fs-sm text-nav bg-secondary text-decoration-none">{{ $article->category->title }}</a>
-                                        <span class="fs-sm text-muted">{{ $article->created_date }}</span>
+                                            class="badge fs-sm text-nav bg-secondary text-decoration-none">{{ $portfolio->category->title }}</a>
+                                        <span class="fs-sm text-muted">{{ $portfolio->created_date }}</span>
                                     </div>
                                     <h3 class="h5 mb-0 article-title">
                                         <a
-                                            href="{{ route('application.articles.show', $article->slug) }}">{{ $article->title }}</a>
+                                            href="{{ route('application.portfolios.show', $portfolio->slug) }}">{{ $portfolio->title }}</a>
                                     </h3>
-                                    <p class="text-justify mt-3 ">
-                                        {{ truncate($article->description, 90) }}
-                                    </p>
+                                    {{-- <p class="text-justify mt-3 ">
+                                        {{ truncate($portfolio->description, 90) }}
+                                    </p> --}}
 
                                 </div>
 

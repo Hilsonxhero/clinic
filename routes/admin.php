@@ -40,6 +40,9 @@ Route::prefix('panel/admin')->middleware('auth')->name('panel.')->group(function
     // treatments
     Route::resource('treatments', App\Http\Controllers\Admin\TreatmentMethodController::class);
 
+    // portfolios
+    Route::resource('portfolios', App\Http\Controllers\Admin\PortfolioController::class);
+
     // contacts
     Route::resource('contacts', App\Http\Controllers\Admin\ContactController::class);
 

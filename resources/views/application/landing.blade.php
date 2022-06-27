@@ -69,6 +69,10 @@
     <x-landing.service :services="$services"></x-landing.service>
 
 
+    <!-- Latest portfolios -->
+    <x-landing.portfolios :portfolios="$portfolios"></x-landing.portfolios>
+
+
     <!-- CTA carousel -->
     <x-landing.treatments :treatments="$treatments"></x-landing.treatments>
 

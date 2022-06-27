@@ -3,11 +3,12 @@
 use App\Http\Controllers\Application\ArticleController;
 use App\Http\Controllers\Application\ContactController;
 use App\Http\Controllers\Application\FaqController;
+use App\Http\Controllers\Application\PortfolioController;
 use App\Http\Controllers\Application\TreatmentController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
-use Shetabit\Visitor\Middlewares\LogVisits;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,9 @@ Route::prefix('')->name('application.')->group(function () {
     //articles
     Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
     Route::get('/articles/{slug}', [ArticleController::class, 'show'])->name('articles.show');
+    //portfolios
+    Route::get('/portfolios', [PortfolioController::class, 'index'])->name('portfolios.index');
+    Route::get('/portfolios/{slug}', [PortfolioController::class, 'show'])->name('portfolios.show');
     //treatments
     Route::get('/treatments', [TreatmentController::class, 'index'])->name('treatments.index');
     Route::get('/treatments/{slug}', [TreatmentController::class, 'show'])->name('treatments.show');

@@ -13,7 +13,6 @@
             }
 
         }
-
     </style>
 @endsection
 
@@ -37,7 +36,8 @@
                     </div>
 
                     <!-- Swiper slider -->
-                    <div class="swiper mx-0 mb-md-n2 mb-xxl-n3" data-swiper-options='{
+                    <div class="swiper mx-0 mb-md-n2 mb-xxl-n3"
+                        data-swiper-options='{
                                                                                               "spaceBetween": 30,
                                                                                               "loop": true,
                                                                                               "tabs": true,
@@ -55,7 +55,8 @@
                                         {{ truncate($treatment->description, '120') }}
 
                                     </p>
-                                    <a href="#" class="btn btn-success btn-lg shadow-success">مشاهده بیشتر</a>
+                                    <a href="{{ route('application.treatments.show', $treatment->slug) }}"
+                                        class="btn btn-success btn-lg shadow-success">مشاهده بیشتر</a>
                                 </div>
                             @endforeach
 
