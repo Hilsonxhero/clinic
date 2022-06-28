@@ -117,3 +117,18 @@ footer ul {
 .t-header .navbar-nav li .nav-link {
     font-weight: 400 !important;
 }
+
+h6,
+.h6,
+h5,
+.h5,
+h4,
+.h4,
+h3,
+.h3,
+h2,
+.h2,
+h1,
+.h1 {
+    font-weight: 500 !important;
+}
