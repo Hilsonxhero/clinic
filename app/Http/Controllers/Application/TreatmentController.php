@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Application;
 use App\Http\Controllers\Controller;
 use App\Models\Treatment;
 use Illuminate\Http\Request;
+use Artesaos\SEOTools\Facades\SEOMeta;
 
 class TreatmentController extends Controller
 {
@@ -32,6 +33,11 @@ class TreatmentController extends Controller
     {
         try {
             $treatment = Treatment::query()->where('slug', $slug)->firstOrFail();
+            SEOMeta::addKeyword($treatment->meta->keywords_value);
+            $this->seo()->setTitle($treatment->meta->title);
+            $this->seo()->setDescription($treatment->meta->description);
+            $this->seo()->opengraph()->addImage(asset($treatment->banner));
+            $this->seo()->jsonLd()->addImage(asset($treatment->banner));
             $related_treatments = Treatment::query()->where('category_id', $treatment->category_id)->take(6)->orderByDesc('created_at')->get();
             $latest_treatments = Treatment::query()->take(6)->orderByDesc('created_at')->get();
             return view('application.treatments.show', compact('treatment', 'related_treatments', 'latest_treatments'));

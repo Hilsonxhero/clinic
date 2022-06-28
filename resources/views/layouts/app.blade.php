@@ -3,13 +3,16 @@
 
 <head>
     <meta charset="utf-8">
-    <title>کلینیک امید - صفحه اصلی</title>
+
+
+
+    {!! SEO::generate() !!}
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Silicon - Multipurpose Technology Bootstrap Template">
+    {{-- <meta name="description" content="Silicon - Multipurpose Technology Bootstrap Template">
     <meta name="keywords"
         content="bootstrap, business, creative agency, mobile app showcase, saas, fintech, finance, online courses, software, medical, conference landing, services, e-commerce, shopping cart, multipurpose, shop, ui kit, marketing, seo, landing, blog, portfolio, html5, css3, javascript, gallery, slider, touch, creative">
-    <meta name="author" content="Createx Studio">
+    <meta name="author" content="Createx Studio"> --}}
 
     <!-- Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -119,7 +122,6 @@
                 transform: rotate(360deg);
             }
         }
-
     </style>
 
     <!-- Theme mode -->
@@ -179,21 +181,17 @@
         <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
     </a>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
         integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
 
     <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    {{-- <script src="{{asset('assets/vendor/smooth-scroll/smooth-scroll.polyfills.min.js')}}"></script> --}}
-    {{-- <script src="{{asset('assets/vendor/rellax/rellax.min.js')}}"></script> --}}
     <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
-    {{-- <script src="{{asset('assets/vendor/lightgallery/lightgallery.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/lightgallery/plugins/fullscreen/lg-fullscreen.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/lightgallery/plugins/zoom/lg-zoom.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/lightgallery/plugins/video/lg-video.min.js')}}"></script> --}}
     <script src="{{ asset('assets/plugins/sweetalert/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('assets/js/axios.js') }}"></script>
     <!-- Main Theme Script -->
     <script src="{{ asset('assets/js/theme.min.js') }}"></script>
+
 
     <x-notification.toast />
 

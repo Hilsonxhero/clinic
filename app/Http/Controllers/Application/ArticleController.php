@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Application;
 
 use Carbon\Carbon;
 use App\Models\Article;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use CyrildeWit\EloquentViewable\Support\Period;
-use CyrildeWit\EloquentViewable\View;
+use Artesaos\SEOTools\Facades\SEOMeta;
 
 class ArticleController extends Controller
 {
@@ -33,8 +33,20 @@ class ArticleController extends Controller
 
     public function show(Request $request, $slug)
     {
+        $setting = Setting::getAll();
+
+
         try {
             $article = Article::query()->where('slug', $slug)->firstOrFail();
+            // dd($article->meta->keywords_value);
+            SEOMeta::addKeyword($article->meta->keywords_value);
+            $this->seo()->setTitle($article->meta->title);
+            $this->seo()->setTitle($article->meta->title);
+            $this->seo()->setDescription($article->meta->description);
+            $this->seo()->opengraph()->addProperty('type', 'Article');
+            $this->seo()->opengraph()->addImage(asset($article->banner));
+            $this->seo()->jsonLd()->addImage(asset($article->banner));
+            $this->seo()->jsonLd()->setType('Article');
             $related_articles = Article::query()->where('category_id', $article->category_id)->take(6)->orderByDesc('created_at')->get();
             $latest_articles = Article::query()->take(6)->orderByDesc('created_at')->get();
             return view('application.articles.show', compact('article', 'related_articles', 'latest_articles'));

@@ -1,7 +1,7 @@
 @props(['landing'])
 <section class="position-relative pt-md-3 pt-lg-5 mb-md-3 mb-lg-5">
     <div class="container position-relative zindex-5 pt-5">
-        <div class="row mt-4 pt-5">
+        <div class="row mt-4 pt-lg-5">
             <div class="col-xl-4 col-lg-5 text-center text-lg-end pb-3 pb-md-4 pb-lg-0">
                 <h1 class="fs-xl text-uppercase">{{ $landing->subtitle }}</h1>
                 <h3 class="display-4 pb-md-2 pb-lg-4">{{ $landing->title }}</h3>

@@ -34,6 +34,11 @@ class ViewServiceProvider extends ServiceProvider
             $view->with(compact('services'));
         });
 
+        View::composer('components.footer', function ($view) {
+            $services = Service::query()->where('status', Service::ACTIVE_STATUS)->take(8)->get();
+            $view->with(compact('services'));
+        });
+
 
         View::composer('*', function ($view) {
             $setting = Setting::getAll();

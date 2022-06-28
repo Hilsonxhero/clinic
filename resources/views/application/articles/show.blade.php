@@ -83,7 +83,7 @@
 
             <!-- Sharing -->
             <div class="col-lg-4 position-relative">
-                <div class=" ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
+                <div class="" style="top: 105px !important;">
                     {{-- <span class="d-block mb-3">5 min read</span>
                     <h6>Share this post:</h6>
                     <div class="mb-4 pb-lg-3">
@@ -109,7 +109,8 @@
                                 @foreach ($latest_articles as $latest_article)
                                     <li class="border-bottom pb-3 ">
                                         <h4 class="h6  article-title ">
-                                            <a href="#" class="">{{ $latest_article->title }}</a>
+                                            <a href="{{ route('application.articles.show', $latest_article->slug) }}"
+                                                class="">{{ $latest_article->title }}</a>
                                         </h4>
                                     </li>
                                 @endforeach

@@ -1,60 +1,27 @@
-<div>
-    {{-- <header class="header navbar navbar-expand-lg navbar-light position-absolute navbar-sticky">
-        <div class="container">
-            <a href="#" class="navbar-brand">
-                <img src="assets/img/logo.svg" width="47" alt="Silicon">
-                Silicon
-            </a>
-            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarCollapse4" aria-expanded="false">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="d-flex d-lg-none order-lg-3">
-                <a href="tel:4055550128" class="nav-link px-2 ms-2">
-                    <i class="bx bx-mobile-alt fs-2"></i>
+<div class="d-flex flex-col navbar-light position-relative navbar-sticky">
+
+    <div class=" d-block w-100 p-3 t-header__info">
+        <div class="container d-flex justify-content-between">
+            <span></span>
+            <div class="d-flex align-items-center">
+                <a href="tel:{{ $setting->phone_1 }}" class="d-flex align-items-center me-3">
+                    <span class="">{{ $setting->phone_1 }}</span>
+                    <span class="t-header-info__icon"><i class='bx bx-phone'></i></span>
                 </a>
-                <a href="mailto:hello@example.com" class="nav-link px-2">
-                    <i class="bx bx-chat fs-2"></i>
+                <a href="tel:{{ $setting->phone_2 }}" class="d-flex align-items-center  me-3">
+                    <span class="">{{ $setting->phone_2 }}</span>
+                    <span class="t-header-info__icon"><i class='bx bx-phone'></i></span>
                 </a>
             </div>
-            <div class="d-none d-lg-flex order-lg-3">
-                <a href="tel:4055550128" class="d-flex align-items-center text-decoration-none ms-4">
-                    <i class="bx bx-mobile-alt fs-2 text-primary"></i>
-                    <div class="fs-sm text-nowrap pe-2">
-                        <h6 class="fs-sm mb-0">Call us</h6>
-                        <span class="text-nav">(405) 555-0128</span>
-                    </div>
-                </a>
-                <a href="mailto:hello@example.com" class="d-flex align-items-center text-decoration-none ms-4">
-                    <i class="bx bx-chat fs-2 text-primary"></i>
-                    <div class="fs-sm pe-2">
-                        <h6 class="fs-sm mb-0">Talk to us</h6>
-                        <span class="text-nav">hello@example.com</span>
-                    </div>
-                </a>
-            </div>
-            <nav id="navbarCollapse4" class="collapse navbar-collapse order-lg-2">
-                <hr class="d-lg-none mt-3 mb-2">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link active">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">About</a>
-                    </li>
-                </ul>
-            </nav>
         </div>
-    </header> --}}
-    <header class="header navbar navbar-expand-lg navbar-light position-absolute navbar-sticky">
+    </div>
+
+    <header class="t-header header navbar navbar-expand-lg">
         <div class="container px-3">
 
             <div id="navbarNav" class="offcanvas offcanvas-start">
                 <div class="offcanvas-header border-bottom">
-                    <h5 class="offcanvas-title">منو</h5>
+                    {{-- <h5 class="offcanvas-title">منو</h5> --}}
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
@@ -151,15 +118,18 @@
                                             <li><a href="blog-grid-with-sidebar.html" class="dropdown-item py-1">Grid
                                                     View with Sidebar</a>
                                             </li>
-                                            <li><a href="blog-list-no-sidebar.html" class="dropdown-item py-1">List View
+                                            <li><a href="blog-list-no-sidebar.html" class="dropdown-item py-1">List
+                                                    View
                                                     no Sidebar</a></li>
-                                            <li><a href="blog-grid-no-sidebar.html" class="dropdown-item py-1">Grid View
+                                            <li><a href="blog-grid-no-sidebar.html" class="dropdown-item py-1">Grid
+                                                    View
                                                     no Sidebar</a></li>
                                             <li><a href="blog-simple-feed.html" class="dropdown-item py-1">Simple
                                                     Feed</a></li>
                                             <li><a href="blog-single.html" class="dropdown-item py-1">Single Post</a>
                                             </li>
-                                            <li><a href="blog-podcast.html" class="dropdown-item py-1">Podcast</a></li>
+                                            <li><a href="blog-podcast.html" class="dropdown-item py-1">Podcast</a>
+                                            </li>
                                         </ul>
                                     </div>
                                     <div class="mega-dropdown-column">
@@ -238,33 +208,11 @@
 
 
             <div class="d-flex align-items-center">
-                {{-- @auth
-                    <a href="{{ route('panel.dashboard') }}" class="btn btn-outline-info btn-icon rounded-circle"
-                        type="button">
-                        <i class="bx bx-user"></i>
-                    </a>
-                @endauth --}}
 
-                <div class="d-none d-lg-flex ">
-                    <a href="tel:4055550128" class="d-flex align-items-center text-decoration-none ms-4">
-                        <i class="bx bx-mobile-alt fs-2 text-primary"></i>
-                        <div class="fs-sm text-nowrap pe-2 d-flex flex-col">
-                            {{-- <h6 class="fs-sm mb-0">تماس با ما</h6> --}}
-                            <span class="text-nav">{{ $setting->phone_1 }}</span>
-                            <span class="text-nav">{{ $setting->phone_2 }}</span>
-                        </div>
-                    </a>
-                    {{-- <a href="mailto:hello@example.com" class="d-flex align-items-center text-decoration-none ms-4">
-                        <i class="bx bx-chat fs-2 text-primary"></i>
-                        <div class="fs-sm pe-2">
-                            <h6 class="fs-sm mb-0">ارتباط با ما</h6>
-                            <span class="text-nav">{{ $setting->email }}</span>
-                        </div>
-                    </a> --}}
-                </div>
+
 
                 @auth
-                    <div class="dropdown  me-4">
+                    <div class="dropdown  me-4 d-none d-lg-block">
                         <a href="#" class="d-flex nav-link p-0" data-bs-toggle="dropdown">
                             <img src="{{ asset('panel/media/svg/avatars/blank.svg') }}" class="rounded-circle"
                                 alt="Avatar" width="48">
@@ -296,8 +244,8 @@
 
 
 
-                <a href="{{ route('application.page.landing') }}" class="navbar-brand pe-3">
-                    <img src="{{ '/storage/' . $setting->logo }}" width="140" alt="">
+                <a href="{{ route('application.page.landing') }}" class="navbar-brand me-0 me-lg-4 ">
+                    <img src="{{ '/storage/' . $setting->logo }}" width="140" alt="" class="me-0">
                 </a>
             </div>
 

@@ -47,8 +47,8 @@
                                     <a href="{{ route('application.portfolios.show', $portfolio->slug) }}"
                                         class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
 
-                                    <img src="{{ $portfolio->file }}" class="card-img-top object-cover"
-                                        alt="Image">
+                                    <img src="{{ $portfolio->file }}" class="card-img-top object-cover" alt="Image"
+                                        loading="lazy">
                                 </div>
                                 <div class="card-body pb-4 article-content">
                                     <div class="d-flex align-items-center justify-content-between mb-3">

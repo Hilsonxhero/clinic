@@ -18,7 +18,7 @@ class Meta extends Model
         'keywords' => 'json'
     ];
 
-    protected $appends  = ['keywords_data'];
+    protected $appends  = ['keywords_data', 'keywords_value'];
 
     protected $table = "meta";
 
@@ -33,6 +33,16 @@ class Meta extends Model
         if ($this->keywords) {
             $values = array_map('array_pop', $this->keywords);
             return implode(",", $values);
+        } else {
+            return '';
+        }
+    }
+
+    public function getKeywordsValueAttribute()
+    {
+        if ($this->keywords) {
+            $values = array_map('array_pop', $this->keywords);
+            return array_values($values);
         } else {
             return '';
         }

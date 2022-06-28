@@ -32,6 +32,12 @@ class PortfolioController extends Controller
     {
         try {
             $portfolio = Portfolio::query()->where('slug', $slug)->firstOrFail();
+            $this->seo()->setTitle($portfolio->title);
+            $this->seo()->setDescription($portfolio->meta->description);
+            $this->seo()->opengraph()->addProperty('type', 'Portfolio');
+            $this->seo()->opengraph()->addImage(asset($portfolio->file));
+            $this->seo()->jsonLd()->addImage(asset($portfolio->file));
+            $this->seo()->jsonLd()->setType('Portfolio');
             $related_portfolios = Portfolio::query()->where('category_id', $portfolio->category_id)->take(6)->orderByDesc('created_at')->get();
             $latest_portfolios = Portfolio::query()->take(6)->orderByDesc('created_at')->get();
             return view('application.portfolios.show', compact('portfolio', 'related_portfolios', 'latest_portfolios'));

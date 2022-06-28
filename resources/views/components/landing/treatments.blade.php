@@ -70,7 +70,8 @@
                         @foreach ($treatments as $key => $treatment)
                             <div id="image-{{ $key }}"
                                 class="swiper-tab  @if ($loop->first) active @endif ">
-                                <img src="{{ $treatment->banner }}" class="rounded-3 treatment-cover " alt="Image">
+                                <img src="{{ $treatment->banner }}" class="rounded-3 treatment-cover " alt="Image"
+                                    loading="lazy">
                             </div>
                         @endforeach
                     </div>

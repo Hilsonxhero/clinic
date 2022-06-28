@@ -47,7 +47,8 @@
                                     <a href="{{ route('application.articles.show', $article->slug) }}"
                                         class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
 
-                                    <img src="{{ $article->banner }}" class="card-img-top" alt="Image">
+                                    <img src="{{ $article->banner }}" class="card-img-top" alt="Image"
+                                        loading="lazy">
                                 </div>
                                 <div class="card-body pb-4 article-content">
                                     <div class="d-flex align-items-center justify-content-between mb-3">
