@@ -8,7 +8,8 @@
                     id="kt_aside_mobile_toggle">
                     <!--begin::Svg Icon | path: icons/duotune/abstract/abs015.svg-->
                     <span class="svg-icon svg-icon-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none">
                             <path
                                 d="M21 7H3C2.4 7 2 6.6 2 6V4C2 3.4 2.4 3 3 3H21C21.6 3 22 3.4 22 4V6C22 6.6 21.6 7 21 7Z"
                                 fill="black" />
@@ -23,7 +24,7 @@
             <!--end::Aside mobile toggle-->
             <!--begin::Mobile logo-->
             <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
-                <a href="../../demo1/dist/index.html" class="d-lg-none">
+                <a href="" class="d-none">
                     <img alt="Logo" src="{{ asset('panel/media/logos/logo-2.svg') }}" class="h-30px" />
                 </a>
             </div>
@@ -51,7 +52,7 @@
                                 <div
                                     class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px">
                                     <div class="menu-item">
-                                        <a class="menu-link active py-3" href="../../demo1/dist/index.html">
+                                        <a class="menu-link active py-3" href="">
                                             <span class="menu-bullet">
                                                 <span class="bullet bullet-dot"></span>
                                             </span>
@@ -59,7 +60,7 @@
                                         </a>
                                     </div>
                                     <div class="menu-item">
-                                        <a class="menu-link py-3" href="../../demo1/dist/dashboards/ecommerce.html">
+                                        <a class="menu-link py-3" href="">
                                             <span class="menu-bullet">
                                                 <span class="bullet bullet-dot"></span>
                                             </span>
@@ -96,8 +97,9 @@
                                     <span class="svg-icon svg-icon-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" fill="none">
-                                            <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2"
-                                                rx="1" transform="rotate(45 17.0365 15.1223)" fill="black" />
+                                            <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546"
+                                                height="2" rx="1" transform="rotate(45 17.0365 15.1223)"
+                                                fill="black" />
                                             <path
                                                 d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z"
                                                 fill="black" />
@@ -121,8 +123,9 @@
                                             class="svg-icon svg-icon-2 svg-icon-lg-1 svg-icon-gray-500 position-absolute top-50 translate-middle-y ms-0">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none">
-                                                <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2"
-                                                    rx="1" transform="rotate(45 17.0365 15.1223)" fill="black" />
+                                                <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546"
+                                                    height="2" rx="1"
+                                                    transform="rotate(45 17.0365 15.1223)" fill="black" />
                                                 <path
                                                     d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z"
                                                     fill="black" />
@@ -131,12 +134,13 @@
                                         <!--end::Svg Icon-->
                                         <!--end::Icon-->
                                         <!--begin::Input-->
-                                        <input type="text" class="search-input form-control form-control-flush ps-10"
-                                            name="search" value="" placeholder="Search..."
-                                            data-kt-search-element="input" />
+                                        <input type="text"
+                                            class="search-input form-control form-control-flush ps-10" name="search"
+                                            value="" placeholder="Search..." data-kt-search-element="input" />
                                         <!--end::Input-->
                                         <!--begin::Spinner-->
-                                        <span class="position-absolute top-50 end-0 translate-middle-y lh-0 d-none me-1"
+                                        <span
+                                            class="position-absolute top-50 end-0 translate-middle-y lh-0 d-none me-1"
                                             data-kt-search-element="spinner">
                                             <span
                                                 class="spinner-border h-15px w-15px align-middle text-gray-400"></span>
@@ -150,9 +154,11 @@
                                             <span class="svg-icon svg-icon-2 svg-icon-lg-1 me-0">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none">
-                                                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1"
+                                                    <rect opacity="0.5" x="6" y="17.3137"
+                                                        width="16" height="2" rx="1"
                                                         transform="rotate(-45 6 17.3137)" fill="black" />
-                                                    <rect x="7.41422" y="6" width="16" height="2" rx="1"
+                                                    <rect x="7.41422" y="6" width="16"
+                                                        height="2" rx="1"
                                                         transform="rotate(45 7.41422 6)" fill="black" />
                                                 </svg>
                                             </span>
@@ -168,8 +174,8 @@
                                                 data-bs-toggle="tooltip" title="Show search preferences">
                                                 <!--begin::Svg Icon | path: icons/duotune/coding/cod001.svg-->
                                                 <span class="svg-icon svg-icon-1">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                        viewBox="0 0 24 24" fill="none">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                        height="24" viewBox="0 0 24 24" fill="none">
                                                         <path opacity="0.3"
                                                             d="M22.1 11.5V12.6C22.1 13.2 21.7 13.6 21.2 13.7L19.9 13.9C19.7 14.7 19.4 15.5 18.9 16.2L19.7 17.2999C20 17.6999 20 18.3999 19.6 18.7999L18.8 19.6C18.4 20 17.8 20 17.3 19.7L16.2 18.9C15.5 19.3 14.7 19.7 13.9 19.9L13.7 21.2C13.6 21.7 13.1 22.1 12.6 22.1H11.5C10.9 22.1 10.5 21.7 10.4 21.2L10.2 19.9C9.4 19.7 8.6 19.4 7.9 18.9L6.8 19.7C6.4 20 5.7 20 5.3 19.6L4.5 18.7999C4.1 18.3999 4.1 17.7999 4.4 17.2999L5.2 16.2C4.8 15.5 4.4 14.7 4.2 13.9L2.9 13.7C2.4 13.6 2 13.1 2 12.6V11.5C2 10.9 2.4 10.5 2.9 10.4L4.2 10.2C4.4 9.39995 4.7 8.60002 5.2 7.90002L4.4 6.79993C4.1 6.39993 4.1 5.69993 4.5 5.29993L5.3 4.5C5.7 4.1 6.3 4.10002 6.8 4.40002L7.9 5.19995C8.6 4.79995 9.4 4.39995 10.2 4.19995L10.4 2.90002C10.5 2.40002 11 2 11.5 2H12.6C13.2 2 13.6 2.40002 13.7 2.90002L13.9 4.19995C14.7 4.39995 15.5 4.69995 16.2 5.19995L17.3 4.40002C17.7 4.10002 18.4 4.1 18.8 4.5L19.6 5.29993C20 5.69993 20 6.29993 19.7 6.79993L18.9 7.90002C19.3 8.60002 19.7 9.39995 19.9 10.2L21.2 10.4C21.7 10.5 22.1 11 22.1 11.5ZM12.1 8.59998C10.2 8.59998 8.6 10.2 8.6 12.1C8.6 14 10.2 15.6 12.1 15.6C14 15.6 15.6 14 15.6 12.1C15.6 10.2 14 8.59998 12.1 8.59998Z"
                                                             fill="black" />
@@ -187,8 +193,8 @@
                                                 data-bs-toggle="tooltip" title="Show more search options">
                                                 <!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
                                                 <span class="svg-icon svg-icon-2">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                        viewBox="0 0 24 24" fill="none">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                        height="24" viewBox="0 0 24 24" fill="none">
                                                         <path
                                                             d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z"
                                                             fill="black" />
@@ -217,7 +223,8 @@
                                                 class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                                 <!--begin::Symbol-->
                                                 <div class="symbol symbol-40px me-4">
-                                                    <img src="{{ asset('panel/media/avatars/300-6.jpg') }}" alt="" />
+                                                    <img src="{{ asset('panel/media/avatars/300-6.jpg') }}"
+                                                        alt="" />
                                                 </div>
                                                 <!--end::Symbol-->
                                                 <!--begin::Title-->
@@ -234,7 +241,8 @@
                                                 class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                                 <!--begin::Symbol-->
                                                 <div class="symbol symbol-40px me-4">
-                                                    <img src="{{ asset('panel/media/avatars/300-2.jpg') }}" alt="" />
+                                                    <img src="{{ asset('panel/media/avatars/300-2.jpg') }}"
+                                                        alt="" />
                                                 </div>
                                                 <!--end::Symbol-->
                                                 <!--begin::Title-->
@@ -251,7 +259,8 @@
                                                 class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                                 <!--begin::Symbol-->
                                                 <div class="symbol symbol-40px me-4">
-                                                    <img src="{{ asset('panel/media/avatars/300-9.jpg') }}" alt="" />
+                                                    <img src="{{ asset('panel/media/avatars/300-9.jpg') }}"
+                                                        alt="" />
                                                 </div>
                                                 <!--end::Symbol-->
                                                 <!--begin::Title-->
@@ -268,7 +277,8 @@
                                                 class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                                 <!--begin::Symbol-->
                                                 <div class="symbol symbol-40px me-4">
-                                                    <img src="{{ asset('panel/media/avatars/300-14.jpg') }}" alt="" />
+                                                    <img src="{{ asset('panel/media/avatars/300-14.jpg') }}"
+                                                        alt="" />
                                                 </div>
                                                 <!--end::Symbol-->
                                                 <!--begin::Title-->
@@ -285,7 +295,8 @@
                                                 class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                                 <!--begin::Symbol-->
                                                 <div class="symbol symbol-40px me-4">
-                                                    <img src="{{ asset('panel/media/avatars/300-11.jpg') }}" alt="" />
+                                                    <img src="{{ asset('panel/media/avatars/300-11.jpg') }}"
+                                                        alt="" />
                                                 </div>
                                                 <!--end::Symbol-->
                                                 <!--begin::Title-->
@@ -420,12 +431,12 @@
                                                                 <path opacity="0.3"
                                                                     d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM12.5 18C12.5 17.4 12.6 17.5 12 17.5H8.5C7.9 17.5 8 17.4 8 18C8 18.6 7.9 18.5 8.5 18.5L12 18C12.6 18 12.5 18.6 12.5 18ZM16.5 13C16.5 12.4 16.6 12.5 16 12.5H8.5C7.9 12.5 8 12.4 8 13C8 13.6 7.9 13.5 8.5 13.5H15.5C16.1 13.5 16.5 13.6 16.5 13ZM12.5 8C12.5 7.4 12.6 7.5 12 7.5H8C7.4 7.5 7.5 7.4 7.5 8C7.5 8.6 7.4 8.5 8 8.5H12C12.6 8.5 12.5 8.6 12.5 8Z"
                                                                     fill="black" />
-                                                                <rect x="7" y="17" width="6" height="2" rx="1"
-                                                                    fill="black" />
-                                                                <rect x="7" y="12" width="10" height="2" rx="1"
-                                                                    fill="black" />
-                                                                <rect x="7" y="7" width="6" height="2" rx="1"
-                                                                    fill="black" />
+                                                                <rect x="7" y="17" width="6"
+                                                                    height="2" rx="1" fill="black" />
+                                                                <rect x="7" y="12" width="10"
+                                                                    height="2" rx="1" fill="black" />
+                                                                <rect x="7" y="7" width="6"
+                                                                    height="2" rx="1" fill="black" />
                                                                 <path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z"
                                                                     fill="black" />
                                                             </svg>
@@ -453,14 +464,15 @@
                                                         <span class="svg-icon svg-icon-2 svg-icon-primary">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24"
                                                                 height="24" viewBox="0 0 24 24" fill="none">
-                                                                <rect x="8" y="9" width="3" height="10" rx="1.5"
+                                                                <rect x="8" y="9" width="3"
+                                                                    height="10" rx="1.5" fill="black" />
+                                                                <rect opacity="0.5" x="13" y="5"
+                                                                    width="3" height="14" rx="1.5"
                                                                     fill="black" />
-                                                                <rect opacity="0.5" x="13" y="5" width="3" height="14"
-                                                                    rx="1.5" fill="black" />
-                                                                <rect x="18" y="11" width="3" height="8" rx="1.5"
-                                                                    fill="black" />
-                                                                <rect x="3" y="13" width="3" height="6" rx="1.5"
-                                                                    fill="black" />
+                                                                <rect x="18" y="11" width="3"
+                                                                    height="8" rx="1.5" fill="black" />
+                                                                <rect x="3" y="13" width="3"
+                                                                    height="6" rx="1.5" fill="black" />
                                                             </svg>
                                                         </span>
                                                         <!--end::Svg Icon-->
@@ -489,10 +501,10 @@
                                                                 <path opacity="0.3"
                                                                     d="M20 3H4C2.89543 3 2 3.89543 2 5V16C2 17.1046 2.89543 18 4 18H4.5C5.05228 18 5.5 18.4477 5.5 19V21.5052C5.5 22.1441 6.21212 22.5253 6.74376 22.1708L11.4885 19.0077C12.4741 18.3506 13.6321 18 14.8167 18H20C21.1046 18 22 17.1046 22 16V5C22 3.89543 21.1046 3 20 3Z"
                                                                     fill="black" />
-                                                                <rect x="6" y="12" width="7" height="2" rx="1"
-                                                                    fill="black" />
-                                                                <rect x="6" y="7" width="12" height="2" rx="1"
-                                                                    fill="black" />
+                                                                <rect x="6" y="12" width="7"
+                                                                    height="2" rx="1" fill="black" />
+                                                                <rect x="6" y="7" width="12"
+                                                                    height="2" rx="1" fill="black" />
                                                             </svg>
                                                         </span>
                                                         <!--end::Svg Icon-->
@@ -786,10 +798,11 @@
                                                     <path opacity="0.3"
                                                         d="M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2Z"
                                                         fill="black" />
-                                                    <path d="M20 8L14 2V6C14 7.10457 14.8954 8 16 8H20Z" fill="black" />
-                                                    <rect x="13.6993" y="13.6656" width="4.42828" height="1.73089"
-                                                        rx="0.865447" transform="rotate(45 13.6993 13.6656)"
+                                                    <path d="M20 8L14 2V6C14 7.10457 14.8954 8 16 8H20Z"
                                                         fill="black" />
+                                                    <rect x="13.6993" y="13.6656" width="4.42828"
+                                                        height="1.73089" rx="0.865447"
+                                                        transform="rotate(45 13.6993 13.6656)" fill="black" />
                                                     <path
                                                         d="M15 12C15 14.2 13.2 16 11 16C8.8 16 7 14.2 7 12C7 9.8 8.8 8 11 8C13.2 8 15 9.8 15 12ZM11 9.6C9.68 9.6 8.6 10.68 8.6 12C8.6 13.32 9.68 14.4 11 14.4C12.32 14.4 13.4 13.32 13.4 12C13.4 10.68 12.32 9.6 11 9.6Z"
                                                         fill="black" />
@@ -826,15 +839,16 @@
                                         <div class="nav-group nav-group-fluid">
                                             <!--begin::Option-->
                                             <label>
-                                                <input type="radio" class="btn-check" name="type" value="has"
-                                                    checked="checked" />
+                                                <input type="radio" class="btn-check" name="type"
+                                                    value="has" checked="checked" />
                                                 <span
                                                     class="btn btn-sm btn-color-muted btn-active btn-active-primary">All</span>
                                             </label>
                                             <!--end::Option-->
                                             <!--begin::Option-->
                                             <label>
-                                                <input type="radio" class="btn-check" name="type" value="users" />
+                                                <input type="radio" class="btn-check" name="type"
+                                                    value="users" />
                                                 <span
                                                     class="btn btn-sm btn-color-muted btn-active btn-active-primary px-4">Users</span>
                                             </label>
@@ -1028,12 +1042,16 @@
                             id="kt_activities_toggle">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen032.svg-->
                             <span class="svg-icon svg-icon-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <rect x="8" y="9" width="3" height="10" rx="1.5" fill="black" />
-                                    <rect opacity="0.5" x="13" y="5" width="3" height="14" rx="1.5" fill="black" />
-                                    <rect x="18" y="11" width="3" height="8" rx="1.5" fill="black" />
-                                    <rect x="3" y="13" width="3" height="6" rx="1.5" fill="black" />
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none">
+                                    <rect x="8" y="9" width="3" height="10"
+                                        rx="1.5" fill="black" />
+                                    <rect opacity="0.5" x="13" y="5" width="3"
+                                        height="14" rx="1.5" fill="black" />
+                                    <rect x="18" y="11" width="3" height="8"
+                                        rx="1.5" fill="black" />
+                                    <rect x="3" y="13" width="3" height="6"
+                                        rx="1.5" fill="black" />
                                 </svg>
                             </span>
                             <!--end::Svg Icon-->
@@ -1049,8 +1067,8 @@
                             data-kt-menu-placement="bottom-end">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen022.svg-->
                             <span class="svg-icon svg-icon-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none">
                                     <path
                                         d="M11.2929 2.70711C11.6834 2.31658 12.3166 2.31658 12.7071 2.70711L15.2929 5.29289C15.6834 5.68342 15.6834 6.31658 15.2929 6.70711L12.7071 9.29289C12.3166 9.68342 11.6834 9.68342 11.2929 9.29289L8.70711 6.70711C8.31658 6.31658 8.31658 5.68342 8.70711 5.29289L11.2929 2.70711Z"
                                         fill="black" />
@@ -1152,11 +1170,14 @@
                                                         <span class="svg-icon svg-icon-2 svg-icon-danger">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24"
                                                                 height="24" viewBox="0 0 24 24" fill="none">
-                                                                <rect opacity="0.3" x="2" y="2" width="20" height="20"
-                                                                    rx="10" fill="black" />
-                                                                <rect x="11" y="14" width="7" height="2" rx="1"
+                                                                <rect opacity="0.3" x="2" y="2"
+                                                                    width="20" height="20" rx="10"
+                                                                    fill="black" />
+                                                                <rect x="11" y="14" width="7"
+                                                                    height="2" rx="1"
                                                                     transform="rotate(-90 11 14)" fill="black" />
-                                                                <rect x="11" y="17" width="2" height="2" rx="1"
+                                                                <rect x="11" y="17" width="2"
+                                                                    height="2" rx="1"
                                                                     transform="rotate(-90 11 17)" fill="black" />
                                                             </svg>
                                                         </span>
@@ -1391,7 +1412,8 @@
                                             <span class="svg-icon svg-icon-5">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none">
-                                                    <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1"
+                                                    <rect opacity="0.5" x="18" y="13"
+                                                        width="13" height="2" rx="1"
                                                         transform="rotate(-180 18 13)" fill="black" />
                                                     <path
                                                         d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
@@ -1405,7 +1427,8 @@
                                 </div>
                                 <!--end::Tab panel-->
                                 <!--begin::Tab panel-->
-                                <div class="tab-pane fade show active" id="kt_topbar_notifications_2" role="tabpanel">
+                                <div class="tab-pane fade show active" id="kt_topbar_notifications_2"
+                                    role="tabpanel">
                                     <!--begin::Wrapper-->
                                     <div class="d-flex flex-column px-9">
                                         <!--begin::Section-->
@@ -1420,7 +1443,8 @@
                                             <!--end::Text-->
                                             <!--begin::Action-->
                                             <div class="text-center mt-5 mb-9">
-                                                <a href="#" class="btn btn-sm btn-primary px-6" data-bs-toggle="modal"
+                                                <a href="#" class="btn btn-sm btn-primary px-6"
+                                                    data-bs-toggle="modal"
                                                     data-bs-target="#kt_modal_upgrade_plan">Upgrade</a>
                                             </div>
                                             <!--end::Action-->
@@ -1487,7 +1511,8 @@
                                                     OK</span>
                                                 <!--end::Code-->
                                                 <!--begin::Title-->
-                                                <a href="#" class="text-gray-800 text-hover-primary fw-bold">Payment
+                                                <a href="#"
+                                                    class="text-gray-800 text-hover-primary fw-bold">Payment
                                                     process</a>
                                                 <!--end::Title-->
                                             </div>
@@ -1506,7 +1531,8 @@
                                                     WRN</span>
                                                 <!--end::Code-->
                                                 <!--begin::Title-->
-                                                <a href="#" class="text-gray-800 text-hover-primary fw-bold">Search
+                                                <a href="#"
+                                                    class="text-gray-800 text-hover-primary fw-bold">Search
                                                     query</a>
                                                 <!--end::Title-->
                                             </div>
@@ -1544,7 +1570,8 @@
                                                     OK</span>
                                                 <!--end::Code-->
                                                 <!--begin::Title-->
-                                                <a href="#" class="text-gray-800 text-hover-primary fw-bold">Database
+                                                <a href="#"
+                                                    class="text-gray-800 text-hover-primary fw-bold">Database
                                                     restore</a>
                                                 <!--end::Title-->
                                             </div>
@@ -1563,7 +1590,8 @@
                                                     WRN</span>
                                                 <!--end::Code-->
                                                 <!--begin::Title-->
-                                                <a href="#" class="text-gray-800 text-hover-primary fw-bold">System
+                                                <a href="#"
+                                                    class="text-gray-800 text-hover-primary fw-bold">System
                                                     update</a>
                                                 <!--end::Title-->
                                             </div>
@@ -1582,7 +1610,8 @@
                                                     WRN</span>
                                                 <!--end::Code-->
                                                 <!--begin::Title-->
-                                                <a href="#" class="text-gray-800 text-hover-primary fw-bold">Server
+                                                <a href="#"
+                                                    class="text-gray-800 text-hover-primary fw-bold">Server
                                                     OS update</a>
                                                 <!--end::Title-->
                                             </div>
@@ -1601,7 +1630,8 @@
                                                     WRN</span>
                                                 <!--end::Code-->
                                                 <!--begin::Title-->
-                                                <a href="#" class="text-gray-800 text-hover-primary fw-bold">API
+                                                <a href="#"
+                                                    class="text-gray-800 text-hover-primary fw-bold">API
                                                     rollback</a>
                                                 <!--end::Title-->
                                             </div>
@@ -1620,7 +1650,8 @@
                                                     ERR</span>
                                                 <!--end::Code-->
                                                 <!--begin::Title-->
-                                                <a href="#" class="text-gray-800 text-hover-primary fw-bold">Refund
+                                                <a href="#"
+                                                    class="text-gray-800 text-hover-primary fw-bold">Refund
                                                     process</a>
                                                 <!--end::Title-->
                                             </div>
@@ -1639,7 +1670,8 @@
                                                     ERR</span>
                                                 <!--end::Code-->
                                                 <!--begin::Title-->
-                                                <a href="#" class="text-gray-800 text-hover-primary fw-bold">Withdrawal
+                                                <a href="#"
+                                                    class="text-gray-800 text-hover-primary fw-bold">Withdrawal
                                                     process</a>
                                                 <!--end::Title-->
                                             </div>
@@ -1658,7 +1690,8 @@
                                                     ERR</span>
                                                 <!--end::Code-->
                                                 <!--begin::Title-->
-                                                <a href="#" class="text-gray-800 text-hover-primary fw-bold">Mail
+                                                <a href="#"
+                                                    class="text-gray-800 text-hover-primary fw-bold">Mail
                                                     tasks</a>
                                                 <!--end::Title-->
                                             </div>
@@ -1676,9 +1709,10 @@
                                             class="btn btn-color-gray-600 btn-active-color-primary">View All
                                             <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
                                             <span class="svg-icon svg-icon-5">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none">
-                                                    <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1"
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                    height="24" viewBox="0 0 24 24" fill="none">
+                                                    <rect opacity="0.5" x="18" y="13"
+                                                        width="13" height="2" rx="1"
                                                         transform="rotate(-180 18 13)" fill="black" />
                                                     <path
                                                         d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
@@ -1705,13 +1739,15 @@
                             id="kt_drawer_chat_toggle">
                             <!--begin::Svg Icon | path: icons/duotune/communication/com012.svg-->
                             <span class="svg-icon svg-icon-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none">
                                     <path opacity="0.3"
                                         d="M20 3H4C2.89543 3 2 3.89543 2 5V16C2 17.1046 2.89543 18 4 18H4.5C5.05228 18 5.5 18.4477 5.5 19V21.5052C5.5 22.1441 6.21212 22.5253 6.74376 22.1708L11.4885 19.0077C12.4741 18.3506 13.6321 18 14.8167 18H20C21.1046 18 22 17.1046 22 16V5C22 3.89543 21.1046 3 20 3Z"
                                         fill="black" />
-                                    <rect x="6" y="12" width="7" height="2" rx="1" fill="black" />
-                                    <rect x="6" y="7" width="12" height="2" rx="1" fill="black" />
+                                    <rect x="6" y="12" width="7" height="2"
+                                        rx="1" fill="black" />
+                                    <rect x="6" y="7" width="12" height="2"
+                                        rx="1" fill="black" />
                                 </svg>
                             </span>
                             <!--end::Svg Icon-->
@@ -1729,12 +1765,16 @@
                             data-kt-menu-placement="bottom-end">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
                             <span class="svg-icon svg-icon-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <rect x="2" y="2" width="9" height="9" rx="2" fill="black" />
-                                    <rect opacity="0.3" x="13" y="2" width="9" height="9" rx="2" fill="black" />
-                                    <rect opacity="0.3" x="13" y="13" width="9" height="9" rx="2" fill="black" />
-                                    <rect opacity="0.3" x="2" y="13" width="9" height="9" rx="2" fill="black" />
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none">
+                                    <rect x="2" y="2" width="9" height="9"
+                                        rx="2" fill="black" />
+                                    <rect opacity="0.3" x="13" y="2" width="9"
+                                        height="9" rx="2" fill="black" />
+                                    <rect opacity="0.3" x="13" y="13" width="9"
+                                        height="9" rx="2" fill="black" />
+                                    <rect opacity="0.3" x="2" y="13" width="9"
+                                        height="9" rx="2" fill="black" />
                                 </svg>
                             </span>
                             <!--end::Svg Icon-->
@@ -1853,8 +1893,9 @@
                                     <span class="svg-icon svg-icon-5">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" fill="none">
-                                            <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1"
-                                                transform="rotate(-180 18 13)" fill="black" />
+                                            <rect opacity="0.5" x="18" y="13" width="13"
+                                                height="2" rx="1" transform="rotate(-180 18 13)"
+                                                fill="black" />
                                             <path
                                                 d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
                                                 fill="black" />
