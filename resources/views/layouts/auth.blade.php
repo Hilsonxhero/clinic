@@ -4,11 +4,13 @@
 <head>
     <meta charset="utf-8">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     {!! SEO::generate() !!}
 
 
     <!-- Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
     <!-- Favicon and Touch Icons -->
     {{-- <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/favicon/apple-touch-icon.png')}}">
