@@ -4,14 +4,21 @@
         <div class="container d-flex justify-content-between">
             <span></span>
             <div class="d-flex align-items-center">
-                <a href="tel:{{ $setting->phone_1 }}" class="d-flex align-items-center me-3">
-                    <span class="">{{ $setting->phone_1 }}</span>
-                    <span class="t-header-info__icon"><i class='bx bx-phone'></i></span>
-                </a>
-                <a href="tel:{{ $setting->phone_2 }}" class="d-flex align-items-center  me-3">
-                    <span class="">{{ $setting->phone_2 }}</span>
-                    <span class="t-header-info__icon"><i class='bx bx-phone'></i></span>
-                </a>
+                @if ($setting->phone_1)
+                    <a href="tel:{{ $setting->phone_1 }}" class="d-flex align-items-center me-3">
+                        <span class="">{{ $setting->phone_1 }}</span>
+                        <span class="t-header-info__icon"><i class='bx bx-phone'></i></span>
+                    </a>
+                @endif
+
+                @if ($setting->phone_2)
+                    <a href="tel:{{ $setting->phone_2 }}" class="d-flex align-items-center  me-3">
+                        <span class="">{{ $setting->phone_2 }}</span>
+                        <span class="t-header-info__icon"><i class='bx bx-phone'></i></span>
+                    </a>
+                @endif
+
+
             </div>
         </div>
     </div>

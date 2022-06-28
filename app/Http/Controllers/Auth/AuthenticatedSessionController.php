@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\LoginRequest;
-use App\Providers\RouteServiceProvider;
+use App\Models\Setting;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Providers\RouteServiceProvider;
+use App\Http\Requests\Auth\LoginRequest;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -17,6 +18,10 @@ class AuthenticatedSessionController extends Controller
      */
     public function create()
     {
+        $setting = Setting::getAll();
+        $this->seo()->setTitle($setting->project_name);
+        $this->seo()->setDescription($setting->project_description);
+        $this->seo()->jsonLd()->addImage('');
         return view('auth.login');
     }
 
